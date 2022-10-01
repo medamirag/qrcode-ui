@@ -1,0 +1,30 @@
+<div [ngClass]="this.form.style.class">
+    <h1>{{form.title}}</h1>
+    <h1>{{form.category}}</h1>
+    <div *ngFor="let item of form.items">
+        <div class="form-group">
+
+            <label class="col-md-4"> {{item.label}} : </label>
+
+            <div *ngIf="item.type ==='EmailInput' ">
+                <label class="form-control " >{{item.value}}</label>
+            </div>
+
+            <div *ngIf="item.type ==='PhoneInput' ">
+                <label class="form-control" >{{item.value}}</label>
+            </div>
+
+            <div *ngIf="item.type ==='AdressInput' ">
+                <label class="form-control" >{{item.value}}</label>
+            </div>
+
+            <div *ngIf="item.type ==='TextInput' ">
+                <label class="form-control" >{{item.value}}</label>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
