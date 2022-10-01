@@ -17,6 +17,7 @@ export class AddFormComponent implements OnInit {
       lng: 12
   };
   zoom = 4;
+  
   moveMap(event: google.maps.MapMouseEvent) {
     let item : google.maps.LatLngLiteral
       if (event.latLng != null){
@@ -28,8 +29,21 @@ export class AddFormComponent implements OnInit {
     }
       
   }
-  add(){
+  add(type:string){
     
+    let person = prompt("Please enter the input label", "Write here");
+    let text;
+    if (person == null || person == "") {
+    } else {
+  
+      this.form.items.push({label:person,type:type,value:""})
+
+    }
+    
+
+  }
+  remove(label:string){
+    this.form.items=this.form.items.filter(x=>x.label!=label)
   }
   move(event: google.maps.MapMouseEvent) {
       if (event.latLng != null) this.display = event.latLng.toJSON();

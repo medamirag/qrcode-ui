@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { EditorRoutingModule } from './editor-routing.module';
 import { AddFormComponent } from './add-form/add-form.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
   imports: [
     CommonModule,
     GoogleMapsModule,
-    EditorRoutingModule
+    EditorRoutingModule,
+    FormsModule
   ]
 })
 export class EditorModule { }

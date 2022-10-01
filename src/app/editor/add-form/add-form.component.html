@@ -1,119 +1,128 @@
-
-<div class="container">
-    <div class="row">
-      <div class="col-1">
-        <div class="area"></div><nav class="main-menu">
-            <ul>
-                <li>
-                    <a (click)="add()">
-                        <i class="fa fa-home fa-2x"></i>
-                        <span class="nav-text">
-                            Dashboard
-                        </span>
-                    </a>
-                  
-                </li>
-                
-                <li>
-                    <a (click)="add()">
-                        <i class="fa fa-solid fa-font"></i>
-                        
-                        <span class="nav-text">
-                            Text
-                        </span>
-                    </a>
-                  
-                </li>
-                <li>
-                    <a (click)="add()">
-                        <i class="fa fa-solid fa-at"></i>                        
-                        <span class="nav-text">
-                            Email
-                        </span>
-                    </a>
-                  
-                </li>
-                <li>
-                    <a (click)="add()">
-                        <i class="fa fa-solid fa-phone"></i>                        <span class="nav-text">
-                            Phone
-                        </span>
-                    </a>
-                  
-                </li>
-            
-                <li>
-                    <a (click)="add()">
-                        <i class="fa far fa-map"></i>                      <span class="nav-text">
-                            Adress
-                        </span>
-                    </a>
-                  
-                </li>
-            
-              
-            </ul>
-            <ul>
-                <li *ngFor="let style of styles" style="padding: 20px;display:inline-block ">
-                    <div (click)="selectClass(style)" class="" [ngClass]="style.class"
-                        style=" border-style: solid ;width: 2rem;height : 2rem">
-                    </div>
-                    <br>
-                </li>
-
-            </ul>
-            <ul class="logout">
-                <li>
-                   <a href="#">
-                         <i class="fa fa-power-off fa-2x"></i>
-                        <span class="nav-text">
-                            Logout
-                        </span>
-                    </a>
-                </li>  
-            </ul>
-        </nav>
-   
-          
-
-
-    </div>
-      <div class="col-sm-11">
-        <div [ngClass]="this.form.style.class">
-            <h1>{{form.title}}</h1>
-            <h1>{{form.category}}</h1>
-            <div *ngFor="let item of form.items">
-                <div class="form-group">
-        
-                    <label>{{item.label}}</label>
-        
-                    <div *ngIf="item.type ==='EmailInput' ">
-                        <input class="form-control" type="email">
-                    </div>
-        
-                    <div *ngIf="item.type ==='PhoneInput' ">
-                        <input class="form-control" type="tel">
-                    </div>
-                    <div class="d-flex justify-content-center">   <google-map *ngIf="item.type ==='AdressInput' " height="300px" width="1000px" [center]="center" [zoom]="zoom"
-                        (mapClick)="moveMap($event)" (mapMousemove)="move($event)">
-                    </google-map></div>
-
-        
-                 
-           
-                <div *ngIf="item.type ==='TextInput' ">
-                    <input class="form-control" type="text">
-        
-        
-                </div>
-        
-            </div>
-        </div>
-        
-     
-        
-        
-      </div>
-    </div>
-  </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Navbar brand -->
+      <i class="fa fa2 fa-solid fa-qrcode"></i>
+      <a class="navbar-brand" href="#">QRCode</a>
   
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div
+        class="collapse navbar-collapse"
+        id="navbarSupportedContent"
+        mdbCollapse
+      >
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li>
+                <a >
+                    <i class="fa fa2 fa-home fa-2x"></i>
+                    <span class="nav-text">
+                        Dashboard
+                    </span>
+                </a>
+              
+            </li>
+            
+            <li>
+                <a (click)="add('TextInput')">
+                    <i class="fa fa2 fa-solid fa-font"></i>
+                    
+                    <span class="nav-text">
+                        Text
+                    </span>
+                </a>
+              
+            </li>
+            <li>
+                <a (click)="add('EmailInput')">
+                    <i class="fa fa2 fa-solid fa-at"></i>                        
+                    <span class="nav-text">
+                        Email
+                    </span>
+                </a>
+              
+            </li>
+            <li>
+                <a (click)="add('PhoneInput')">
+                    <i class="fa fa2 fa-solid fa-phone"></i>                        <span class="nav-text">
+                        Phone
+                    </span>
+                </a>
+              
+            </li>
+        
+            <li>
+                <a (click)="add('AdressInput')">
+                    <i class="fa fa2 far fa-map"></i>                      <span class="nav-text">
+                        Adress
+                    </span>
+                </a>
+              
+            </li>
+        
+          
+        </ul>
+        <ul>
+            <li *ngFor="let style of styles" style="padding: 10px;display:inline-block ">
+                <div (click)="selectClass(style)" class="" [ngClass]="style.class"
+                    style=" border-style: solid ;width: 2rem;height : 2rem">
+                </div>
+                <br>
+            </li>
+        </ul>
+        <!-- Left links -->
+  
+ 
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <div [ngClass]="this.form.style.class">
+    <h1>{{form.title}}</h1>
+    <h1>{{form.category}}</h1>
+    <div *ngFor="let item of form.items">
+        <div class="form-group">
+
+            <label>{{item.label}} </label>
+            <i (click)="remove(item.label)" class="fa fa-solid fa-ban	"></i>
+            <div *ngIf="item.type ==='EmailInput' ">
+                <input class="form-control" type="email">
+            </div>
+
+            <div *ngIf="item.type ==='PhoneInput' ">
+                <input class="form-control" type="tel">
+            </div>
+            <div class="d-flex justify-content-center">   <google-map *ngIf="item.type ==='AdressInput' " height="300px" width="1000px" [center]="center" [zoom]="zoom"
+                (mapClick)="moveMap($event)" (mapMousemove)="move($event)">
+            </google-map></div>
+
+
+         
+   
+        <div *ngIf="item.type ==='TextInput' ">
+            <input class="form-control" type="text">
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+</div>
+
+
+
