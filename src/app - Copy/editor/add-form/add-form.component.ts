@@ -28,9 +28,6 @@ export class AddFormComponent implements OnInit {
     }
       
   }
-  add(){
-    
-  }
   move(event: google.maps.MapMouseEvent) {
       if (event.latLng != null) this.display = event.latLng.toJSON();
   }
