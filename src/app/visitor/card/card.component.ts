@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Form } from 'src/app/editor/form';
 import { FormService } from 'src/app/editor/form.service';
 
@@ -8,16 +9,16 @@ import { FormService } from 'src/app/editor/form.service';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  form:Form={category:"",
-  style:{class:"",title:""},
+  form:Form={category:"",id:"",
+  style:"",
   items:[
   ],
   title:"",userId:"1"
   };
-  constructor(private formService:FormService) { }
+  constructor(private formService:FormService,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.form=this.formService.getForm()
+    this.formService.getFormByIdForm(this.activatedRoute.snapshot.params['id']).subscribe(data=>this.form=data)
   }
   
 

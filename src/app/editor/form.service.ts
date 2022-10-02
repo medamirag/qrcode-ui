@@ -1,27 +1,37 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Form } from './form';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormService {
-form:Form={category:"Business Card",
-style:{class:"",title:""},
-items:[
-  {label:"email",type:"EmailInput",value:"email1@gmail.com"},
-  {label:"phone",type:"PhoneInput",value:"73665333"},
-  {label:"nom",type:"TextInput",value:"Mohamed"},
-  {label:"prenom",type:"TextInput",value:"Salah"},
-  {label:"Adresse",type:"AdressInput",value:"Salah"},
-],
-title:"Carte visite",userId:"1"
-}
-  constructor() { }
+  constructor(private httpClient:HttpClient) { }
 
-  getForm():Form{
-    return this.form
+form:Form={category:"",
+style:"",
+items:[
+],
+title:"",userId:"",id:""
+}
+baseUrl = environment.serverUrl
+
+forms:Form[]=[]
+saveOrUpdate(form:Form){
+  console.log("before",form);
+  
+    return this.httpClient.post<Form>(`${this.baseUrl}/forms/addForm`,form)
   }
-  saveForm(form:Form){
-    this.form = form
+  getAllFormsByUser():Observable<Form[]>{
+    let userId = localStorage.getItem('userId')
+    return this.httpClient.get<Form[]>(`${this.baseUrl}/forms/User/${userId}`)
+  }
+  deleteByFormID(formId:string):Observable<any>{
+    return this.httpClient.delete<any>(`${this.baseUrl}/forms/${formId}`)
+  }
+  getFormByIdForm(formId:string):Observable<Form>{
+    return this.httpClient.get<Form>(`${this.baseUrl}/forms/${formId}`)
   }
 }

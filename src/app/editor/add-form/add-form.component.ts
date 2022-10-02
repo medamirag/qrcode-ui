@@ -1,28 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Form } from '../form';
 import { FormService } from '../form.service';
-import { Style } from '../style';
 import { StylesService } from '../styles.service';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+import { Style } from '../style';
 @Component({
   selector: 'app-add-form',
   templateUrl: './add-form.component.html',
   styleUrls: ['./add-form.component.scss']
 })
 export class AddFormComponent implements OnInit {
-
+  @ViewChild('qrCode', { static: true }) qrCode!: TemplateRef<any>;
   display: any;
+  activeUrl:string=""
   center: google.maps.LatLngLiteral = {
       lat: 24,
       lng: 12
   };
   zoom = 4;
-  
+  constructor(private route: Router ,private router:ActivatedRoute,private modal: NgbModal,private formService:FormService,private styleService : StylesService)
+     {
+      this.styles=this.styleService.getAllStyles();
+      this.activatedRoute=this.router.snapshot.params['id']
+      
+      if(this.activatedRoute!='0'){
+        console.log("this.activatedRoute"+this.activatedRoute);
+        
+        this.formService.getFormByIdForm(this.activatedRoute).subscribe(data=>this.form=data)
+      }
+     }
   moveMap(event: google.maps.MapMouseEvent) {
     let item : google.maps.LatLngLiteral
       if (event.latLng != null){
-     this.form.items.find(x=>x.type==="AdressInput")!.center=this.display;
-     
+    let item =  this.form.items.find(x=>x.type==="AdressInput")
+     item!.lat =this.display.lat;
+     item!.lng =this.display.lat;
      
      
      //= (event.latLng.toJSON());
@@ -53,26 +67,32 @@ export class AddFormComponent implements OnInit {
 
 
   styles:Style[]=[]
-  form:Form={category:"",
-  style:{class:"",title:""},
+  form:Form={category:"",id:"",
   items:[
   ],
-  title:"",userId:"1"
+  title:"",userId:"1",style:""
   };
+  activatedRoute:string=""
   
-    constructor(private formService:FormService,private styleService : StylesService) {
-      this.form=this.formService.getForm();
-      this.styles=this.styleService.getAllStyles();
-     }
+    
 
   ngOnInit(): void {
+
   }
-  selectClass(style:Style){
+  getQrCode(){
+this.activeUrl=environment.baseUrl+"/visitor/"+this.router.snapshot.params['id']
+    this.modal.open(this.qrCode, { size: 'lg' });
+  }
+  selectClass(style:string){
     this.form.style=style;
     
   }
-  saveStyle(){
-    this.formService.saveForm(this.form)
+ 
+  saveOrUpdate(){
+    this.formService.saveOrUpdate(this.form).subscribe(data=>{console.log(data);
+      this.route.navigate(['/editor']);
+    } 
+       )
   }
   
 

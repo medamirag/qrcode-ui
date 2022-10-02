@@ -1,0 +1,33 @@
+<button class="btn btn-success" routerLink="/editor/forms/0">Add New Form</button>
+<table>
+<thead>
+<tr>
+    <td>Name</td>
+    <td>Category</td>
+    <td>actions</td>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let form of forms">
+<td>
+    {{form.title}}
+</td>
+<td>{{form.category}}</td>
+<td>        <button  class="navbar-brand" (click)="getQrCode(form.id)" >QRCode</button>
+    <button routerLink="/editor/forms/{{form.id}}" class="btn btn-warning">edit</button><button class="btn btn-danger" (click)="deleteByFormID(form.id)">delete</button></td>
+</tr>
+
+</tbody>
+
+</table>
+<ng-template #qrCode let-close="close">
+    <div class="modal-header">
+        {{activeUrl}}
+    </div>
+    <div class="modal-body">
+        <qrcode [qrdata]="activeUrl" [width]="400" [errorCorrectionLevel]="'M'"></qrcode>
+    </div>
+    <div class="modal-footer">
+
+    </div>
+</ng-template>

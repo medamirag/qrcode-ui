@@ -2,9 +2,11 @@ import { Style } from "./style";
 
 export interface Form {
     category:string,
-    items:{label:string,type:string,value:string,center?:google.maps.LatLngLiteral}[],
+    items:{label:string,type:string,value:string,lat?:string,lng?:string}[],
     userId:string,
     title:string,
-    style:Style
+    style:string,
+    id:string
+ 
 
 }
