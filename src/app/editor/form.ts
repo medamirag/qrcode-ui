@@ -7,6 +7,7 @@ export interface Form {
     title:string,
     style:string,
     id:string
+    border?:string
  
 
 }

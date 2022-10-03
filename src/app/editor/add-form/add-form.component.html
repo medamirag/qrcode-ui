@@ -5,6 +5,10 @@
 
 
 <div class="sidenav">
+    <div class="d-flex justify-content-center">
+
+    <button class="btn btn-primary justify-content-sm-center btn-lg" (click)="saveOrUpdate()">SAVE</button>
+    </div>
     <ul class="">
        
 
@@ -37,7 +41,7 @@
         </li>
 
         <li>
-            <a (click)="add('AdressInput')">
+            <a (click)="add('AddressInput')">
                 <i class="fa fa2 far fa-map"></i> <span class="nav-text">
                     Adress
                 </span>
@@ -55,50 +59,74 @@
             <br>
         </li>
     </ul>
+<h1>#################</h1>
+<ul>
+    <li *ngFor="let border of borders" style="padding: 10px;display:inline-block ">
+        <div (click)="selectBorder(border)" class="" [ngClass]="border"
+            style=" border-style: solid ;width: 2rem;height : 2rem">
+        </div>
+        <br>
+    </li>
+</ul>
 
 </div>
 
 
 <div class="main">
+<div [ngClass]="this.form.border">
 <div [ngClass]="this.form.style">
     <h1>{{form.title}}</h1>
     <h1>{{form.category}}</h1>
     <div *ngFor="let item of form.items">
-        <div class="form-group">
-
-            <label>{{item.label}} </label>
-            <i (click)="remove(item.label)" class="fa fa-solid fa-ban	"></i>
-            <div *ngIf="item.type ==='EmailInput' ">
-                <input [(ngModel)]="item.value" class="form-control" type="email">
+        
+        <div *ngIf="item.type ==='EmailInput' " class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span (click)="remove(item.label)" class="input-group-text" id="basic-addon1">{{item.label}}</span>
             </div>
+            <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
 
-            <div *ngIf="item.type ==='PhoneInput' ">
-                <input [(ngModel)]="item.value" class="form-control" type="tel">
+      
+           
+
+        <div *ngIf="item.type ==='PhoneInput' " class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span (click)="remove(item.label)" class="input-group-text" id="basic-addon1">{{item.label}}</span>
             </div>
+            <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+       
+          <div *ngIf="item.type ==='AddressInput' " class="input-group mb-3">
             <div class="d-flex justify-content-center">
-                <google-map *ngIf="item.type ==='AdressInput' " height="300px" width="1000px" [center]="center"
+                <google-map *ngIf="item.type ==='AddressInput' " height="250px" width="250px" [center]="center"
                     [zoom]="zoom" (mapClick)="moveMap($event)" (mapMousemove)="move($event)">
                 </google-map>
             </div>
+          </div>
+
+         
 
 
 
+            <div *ngIf="item.type ==='TextInput' " class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span (click)="remove(item.label)" class="input-group-text" id="basic-addon1">{{item.label}}</span>
+                </div>
+                <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+    
 
-            <div *ngIf="item.type ==='TextInput' ">
-                <input [(ngModel)]="item.value" class="form-control" type="text">
-
-
-            </div>
-
-        </div>
+     
     </div>
 
 
 
 
 </div>
-<button class="btn btn-primary" (click)="saveOrUpdate()">SAVE</button>
 
+
+
+</div>
 </div>
 <ng-template #qrCode let-close="close">
     <div class="modal-header">

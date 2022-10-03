@@ -1,0 +1,16 @@
+.test {
+    width: 300px;
+    padding: 20px;
+    margin: 10px auto;
+    line-height: 3;
+    /*background-color: #f66;*/
+    /*background-clip: padding-box;*/
+    /* use instead : */
+    background:linear-gradient(rgb(0, 0, 0),rgb(255, 255, 255)) no-repeat center center;
+    background-size: calc(100% + 20px)  calc(100% + 20px);
+    text-align: center;
+    /* border-related properties */
+    // border: 20px solid black;  
+    
+  }
+  

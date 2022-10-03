@@ -23,6 +23,7 @@ export class AddFormComponent implements OnInit {
   constructor(private route: Router ,private router:ActivatedRoute,private modal: NgbModal,private formService:FormService,private styleService : StylesService)
      {
       this.styles=this.styleService.getAllStyles();
+      this.borders=this.styleService.getAllBorders();
       this.activatedRoute=this.router.snapshot.params['id']
       
       if(this.activatedRoute!='0'){
@@ -44,16 +45,35 @@ export class AddFormComponent implements OnInit {
       
   }
   add(type:string){
-    
-    let person = prompt("Please enter the input label", "Write here");
-    let text;
-    if (person == null || person == "") {
-    } else {
-  
-      this.form.items.push({label:person,type:type,value:""})
+    console.log(type);
+
+    if(type==='EmailInput')
+    {
+      this.form.items.push({label:"Email",type:type,value:""})
+
+    }
+    else if(type==='PhoneInput'){
+      this.form.items.push({label:"Télephone",type:type,value:""})
+
+    }
+    else if(type==='AddressInput'){
+
+      this.form.items.push({label:"Address",type:type,value:""})
 
     }
     
+    else{
+
+    
+    let input = prompt("Please enter the input label", "Write here");
+    let text;
+    if (input == null || input == "") {
+    } else {
+  
+      this.form.items.push({label:input,type:type,value:""})
+
+    }
+  }
 
   }
   remove(label:string){
@@ -67,7 +87,8 @@ export class AddFormComponent implements OnInit {
 
 
   styles:Style[]=[]
-  form:Form={category:"",id:"",
+  borders:string[]=[]
+  form:Form={category:"",id:"",border:"border",
   items:[
   ],
   title:"",userId:"1",style:""
@@ -85,6 +106,10 @@ this.activeUrl=environment.baseUrl+"/visitor/"+this.router.snapshot.params['id']
   }
   selectClass(style:string){
     this.form.style=style;
+    
+  }
+  selectBorder(border:string){
+    this.form.border=border;
     
   }
  

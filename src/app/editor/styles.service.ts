@@ -18,9 +18,15 @@ styles:Style[]=[
   {class:"style10",title:"Style 10"},
 
 ]
+borders:string[]=["border1","border2","border3","border4","border5","border6","border7"
+
+]
 
   constructor() { }
   getAllStyles(){
     return this.styles
+  }
+  getAllBorders(){
+    return this.borders
   }
 }

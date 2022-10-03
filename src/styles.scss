@@ -43,6 +43,118 @@
     background-size: 1.5em 11em, 1.5em 11em, 2.3em 8em, 2.3em 8em, 3.5em 11em, 3.5em 11em, 100% 100%;
     background-repeat: repeat;
   };
+  .border1 {
+    width: 300px;
+    padding: 20px;
+    margin: 10px auto;
+    line-height: 3;
+    /*background-color: #f66;*/
+    /*background-clip: padding-box;*/
+    /* use instead : */
+    background:linear-gradient(rgb(255, 255, 255),rgb(0, 0, 0)) no-repeat center center;
+    background-size: calc(100% + 20px)  calc(100% + 20px);
+    text-align: center;
+    /* border-related properties */
+    // border: 20px solid black;  
+   
+    
+  }
+  .border2 {
+    width: 300px;
+    padding: 20px;
+    margin: 10px auto;
+    line-height: 3;
+    /*background-color: #f66;*/
+    /*background-clip: padding-box;*/
+    /* use instead : */
+    background:linear-gradient(rgb(218, 23, 23),rgb(21, 63, 204)) no-repeat center center;
+    background-size: calc(100% + 20px)  calc(100% + 20px);
+    text-align: center;
+    /* border-related properties */
+    // border: 20px solid black;  
+   
+    
+  }
+  .border3 {
+    width: 300px;
+    padding: 20px;
+    margin: 10px auto;
+    line-height: 3;
+    /*background-color: #f66;*/
+    /*background-clip: padding-box;*/
+    /* use instead : */
+    background:linear-gradient(rgb(107, 19, 189),rgb(65, 65, 68)) no-repeat center center;
+    background-size: calc(100% + 20px)  calc(100% + 20px);
+    text-align: center;
+    /* border-related properties */
+    // border: 20px solid black;  
+   
+    
+  }
+  .border4 {
+    width: 300px;
+    padding: 20px;
+    margin: 10px auto;
+    line-height: 3;
+    /*background-color: #f66;*/
+    /*background-clip: padding-box;*/
+    /* use instead : */
+    background:linear-gradient(rgb(119, 7, 7),rgb(0, 0, 0)) no-repeat center center;
+    background-size: calc(100% + 20px)  calc(100% + 20px);
+    text-align: center;
+    /* border-related properties */
+    // border: 20px solid black;  
+   
+    
+  }
+  .border5 {
+    width: 300px;
+    padding: 20px;
+    margin: 10px auto;
+    line-height: 3;
+    /*background-color: #f66;*/
+    /*background-clip: padding-box;*/
+    /* use instead : */
+    background:linear-gradient(rgb(255, 38, 0),rgb(255, 255, 255)) no-repeat center center;
+    background-size: calc(100% + 20px)  calc(100% + 20px);
+    text-align: center;
+    /* border-related properties */
+    // border: 20px solid black;  
+   
+    
+  }
+  .border6 {
+    width: 300px;
+    padding: 20px;
+    margin: 10px auto;
+    line-height: 3;
+    /*background-color: #f66;*/
+    /*background-clip: padding-box;*/
+    /* use instead : */
+    background:linear-gradient(rgb(243, 18, 149),rgb(255, 255, 255)) no-repeat center center;
+    background-size: calc(100% + 20px)  calc(100% + 20px);
+    text-align: center;
+    /* border-related properties */
+    // border: 20px solid black;  
+   
+    
+  }
+  .border7 {
+    width: 300px;
+    padding: 20px;
+    margin: 10px auto;
+    line-height: 3;
+    /*background-color: #f66;*/
+    /*background-clip: padding-box;*/
+    /* use instead : */
+    background:linear-gradient(rgb(251, 255, 0),rgb(20, 192, 4)) no-repeat center center;
+    background-size: calc(100% + 20px)  calc(100% + 20px);
+    text-align: center;
+    /* border-related properties */
+    // border: 20px solid black;  
+   
+    
+  }
   
 
 /* Importing Bootstrap SCSS file. */
