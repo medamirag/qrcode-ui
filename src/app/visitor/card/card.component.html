@@ -22,16 +22,14 @@
                 <label class="form-control" >{{item.value}}</label>
             </div>
 
-
+            <div class="d-flex justify-content-center">
+                <google-map *ngIf="item.type ==='AdressInput' " height="300px" width="1000px" [center]="center"
+                    [zoom]="zoom" (mapClick)="moveMap($event)" (mapMousemove)="move($event)">
+                </google-map>
+            </div>
         </div>
 
     </div>
 </div>
-<google-map height="400px"
-            width="750px"
-            [center]="center"
-            [zoom]="zoom"
-            (mapClick)="moveMap($event)"
-            (mapMousemove)="move($event)">
-</google-map>
+
 
