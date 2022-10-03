@@ -155,6 +155,22 @@
    
     
   }
+  .border {
+    width: 300px;
+    padding: 20px;
+    margin: 10px auto;
+    line-height: 3;
+    /*background-color: #f66;*/
+    /*background-clip: padding-box;*/
+    /* use instead : */
+    background:linear-gradient(rgb(170, 170, 165),rgb(65, 94, 62)) no-repeat center center;
+    background-size: calc(100% + 20px)  calc(100% + 20px);
+    text-align: center;
+    /* border-related properties */
+    // border: 20px solid black;  
+   
+    
+  }
   
 
 /* Importing Bootstrap SCSS file. */
