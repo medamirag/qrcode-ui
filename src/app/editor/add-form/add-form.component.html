@@ -8,13 +8,13 @@
         
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active"  href="#">Carte Visite</a>
+            <a class="nav-link active"  (click)="addTemplate('businessCard')">Carte Visite</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Patient Alzheimer</a>
+            <a class="nav-link" (click)="addTemplate('AlzheimerPatient')">Patient Alzheimer</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Menu Restaurant</a>
+            <a class="nav-link" (click)="addTemplate('restaurantMenu')">Menu Restaurant</a>
           </li>
           
         </ul>
@@ -44,6 +44,26 @@
     <ul class="">
        
 
+        <li>
+            <a (click)="add('Divider')">
+                <i class="fa fa2 fa-solid fa-bars"></i>
+
+                <span class="nav-text">
+                    Divider
+                </span>
+            </a>
+
+        </li>
+        <li>
+            <a (click)="add('Title')">
+                <i class="fa fa2 fa-solid fa-paragraph"></i>
+
+                <span class="nav-text">
+                    Title
+                </span>
+            </a>
+
+        </li>
         <li>
             <a (click)="add('TextInput')">
                 <i class="fa fa2 fa-solid fa-font"></i>
@@ -116,7 +136,7 @@
         
         <div *ngIf="item.type ==='EmailInput' " class="input-group mb-3">
             <div class="input-group-prepend">
-              <span (click)="remove(item.label)" class="input-group-text" id="basic-addon1">{{item.label}}</span>
+              <span (click)="remove(item.label,item.identifier)" class="input-group-text" id="basic-addon1">{{item.label}}</span>
             </div>
             <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
           </div>
@@ -124,9 +144,19 @@
       
            
 
+        <div (click)="remove(item.label,item.identifier)" *ngIf="item.type ==='Divider' " class="input-group mb-3">
+                       <hr>
+          </div>
+
+
+          <div (click)="remove(item.label,item.identifier)" *ngIf="item.type ==='Title' " class="input-group mb-3">
+            
+            <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+       
         <div *ngIf="item.type ==='PhoneInput' " class="input-group mb-3">
             <div class="input-group-prepend">
-              <span (click)="remove(item.label)" class="input-group-text" id="basic-addon1">{{item.label}}</span>
+              <span (click)="remove(item.label,item.identifier)" class="input-group-text" id="basic-addon1">{{item.label}}</span>
             </div>
             <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
           </div>
@@ -145,7 +175,7 @@
 
             <div *ngIf="item.type ==='TextInput' " class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span (click)="remove(item.label)" class="input-group-text" id="basic-addon1">{{item.label}}</span>
+                  <span (click)="remove(item.label,item.identifier)" class="input-group-text" id="basic-addon1">{{item.label}}</span>
                 </div>
                 <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
               </div>

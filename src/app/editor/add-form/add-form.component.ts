@@ -44,23 +44,54 @@ export class AddFormComponent implements OnInit {
     }
       
   }
+  getIdentifier(type:string){
+    // console.log((this.form.items.filter(x=>x.type===type).length)+1);
+        
+    return (this.form.items.filter(x=>x.type===type).length )+1 
+  }
   add(type:string){
     console.log(type);
 
     if(type==='EmailInput')
     {
-      this.form.items.push({label:"Email",type:type,value:""})
+      this.form.items.push({identifier:this.getIdentifier(type),label:"Email",type:type,value:""})
 
     }
     else if(type==='PhoneInput'){
-      this.form.items.push({label:"Télephone",type:type,value:""})
+      this.form.items.push({identifier:this.getIdentifier(type),label:"Télephone",type:type,value:""})
 
     }
     else if(type==='AddressInput'){
 
-      this.form.items.push({label:"Address",type:type,value:""})
+      this.form.items.push({identifier:this.getIdentifier(type),label:"Address",type:type,value:""})
 
     }
+    
+    else if(type==='Title'){
+
+      let input = prompt("Please enter the Title", "Write here");
+      let text;
+      if (input == null || input == "") {
+      } else {
+    
+        this.form.items.push({identifier:this.getIdentifier(type),label:input,type:type,value:input})
+  
+      }
+    }
+    else if(type==='Divider'){
+
+      
+    
+        this.form.items.push({identifier:this.getIdentifier(type),label:"",type:type,value:""})
+  
+    
+    }
+    else if(type==='AddressInput'){
+
+      this.form.items.push({identifier:this.getIdentifier(type),label:"Address",type:type,value:""})
+
+    }
+    
     
     else{
 
@@ -70,14 +101,22 @@ export class AddFormComponent implements OnInit {
     if (input == null || input == "") {
     } else {
   
-      this.form.items.push({label:input,type:type,value:""})
+      this.form.items.push({identifier:this.getIdentifier(type),label:input,type:type,value:""})
 
     }
   }
 
   }
-  remove(label:string){
-    this.form.items=this.form.items.filter(x=>x.label!=label)
+  remove(label:string,identifier:number){
+    if(confirm('do you really want to remove this item')){
+
+      
+
+      this.form.items=this.form.items.filter(x=>!(x.label===label&&x.identifier===identifier))
+      
+      // this.form.items=this.form.items.filter(x=>x.identifier!=identifier)
+
+    }
   }
   move(event: google.maps.MapMouseEvent) {
       if (event.latLng != null) this.display = event.latLng.toJSON();
@@ -94,7 +133,43 @@ export class AddFormComponent implements OnInit {
   title:"",userId:"1",style:""
   };
   activatedRoute:string=""
-  
+  addTemplate(template:string){
+    if (template==='AlzheimerPatient'){
+this.form.title = template;
+this.form.category=template;
+this.form.items=[
+{identifier:this.getIdentifier("TextInput"),label:"Patient Name",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Brother's Name",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Wife Name",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Son's Name",type:'TextInput',value:""},
+{identifier:this.getIdentifier("PhoneInput"),label:"Wife's Phone",type:'PhoneInput',value:""},
+{identifier:this.getIdentifier("PhoneInput"),label:"Brother's Phone",type:'PhoneInput',value:""},
+{identifier:this.getIdentifier("PhoneInput"),label:"Son's Phone",type:'PhoneInput',value:""},
+{identifier:this.getIdentifier("AddressInput"),label:"Patient's Address",type:'AddressInput',value:""},
+{identifier:this.getIdentifier("AddressInput"),label:"Brother's Address",type:'AddressInput',value:""},
+{identifier:this.getIdentifier("AddressInput"),label:"Son's Address",type:'AddressInput',value:""},
+
+]
+    }
+    else if(template==='businessCard'){
+      this.form.title = template;
+      this.form.category=template;
+      this.form.items=[{identifier:this.getIdentifier("EmailInput"),label:"Email",type:"EmailInput",value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Name",type:'TextInput',value:""},
+{identifier:this.getIdentifier("PhoneInput"),label:"Personal Phone",type:'PhoneInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Company's Name",type:'TextInput',value:""},
+{identifier:this.getIdentifier("PhoneInput"),label:"Company's Phone",type:'PhoneInput',value:""},
+{identifier:this.getIdentifier("AddressInput"),label:"Company's Address",type:'AddressInput',value:""},
+
+]
+
+    }
+    else if (template==='restaurantMenu'){
+      this.form.title = template;
+      this.form.category=template;
+
+    }
+  }
     
 
   ngOnInit(): void {
