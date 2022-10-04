@@ -13,4 +13,111 @@
     // border: 20px solid black;  
     
   }
+  .title{
+    text-align: center;
+    color: blue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+  background-color: gray;
+  }
   
+
+//////////////////////////////////////////////
+
+.carte
+{
+  width:800px;
+  height:400px;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  border:5px solid black;
+  border-radius:5%;
+  background-image:url("https://miro.medium.com/max/1200/1*4BIGTY604aR0LT0h1DcQEw.png");
+}
+#Top-Left
+{
+ 
+  grid-row:1;
+  grid-column:1;
+  
+}
+#Center
+{
+  grid-row:2;
+  grid-column:2;
+  text-align:center;
+  
+}
+#Top-Right
+{
+  text-align:center;
+  grid-row:1;
+  grid-column:3;
+  
+}
+.circle {
+  display: block;
+  background: #FFC236;
+  border:1px solid black;
+  border-radius: 50%;
+  grid-row:3;
+  grid-column:1;
+}
+
+#cercle1
+{
+  
+  height: 140px;
+  width: 140px;
+}
+#cercle2
+{
+  background: black;
+  height: 120px;
+  width: 120px;
+}
+#cercle3
+{
+ 
+  height: 100px;
+  width: 100px;
+}
+h1
+{
+  color:white;
+}
+p
+{
+  color:white;
+  font-family: 'Oswald', sans-serif;
+}
+
+#Center h1
+{
+  text-decoration: underline;
+  font-family: 'Montserrat', sans-serif;
+}
+#Top-Left img
+{
+  max-width:50%;
+}
+
+.circle:hover
+{
+  background-color:#FFFFFF;
+}
+#Reseau
+{
+  margin-left:40%;
+  margin-top:25%;
+  grid-row:3;
+  grid-column:3;
+  
+}
+
+#Reseau img
+{
+  max-width:65%;
+  
+}

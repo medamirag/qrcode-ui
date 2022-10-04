@@ -16,12 +16,14 @@ export class AddFormComponent implements OnInit {
   display: any;
   activeUrl:string=""
   center: google.maps.LatLngLiteral = {
-      lat: 24,
-      lng: 12
+      lat: 35.49961609339906,
+      lng: 35.49961609339906,
   };
-  zoom = 4;
+  zoom = 16;
   constructor(private route: Router ,private router:ActivatedRoute,private modal: NgbModal,private formService:FormService,private styleService : StylesService)
      {
+      console.log("this.center",this.center);
+
       this.styles=this.styleService.getAllStyles();
       this.borders=this.styleService.getAllBorders();
       this.activatedRoute=this.router.snapshot.params['id']
@@ -29,20 +31,18 @@ export class AddFormComponent implements OnInit {
       if(this.activatedRoute!='0'){
         console.log("this.activatedRoute"+this.activatedRoute);
         
-        this.formService.getFormByIdForm(this.activatedRoute).subscribe(data=>this.form=data)
+        this.formService.getFormByIdForm(this.activatedRoute).subscribe(data=>{this.form=data;
+       let item =  this.form.items.find(x=>x.type==="AddressInput");
+       if(item){
+        this.center = {lat:Number(item.lat),lng:Number(item.lng)}
+       }
+      
+        })
       }
      }
   moveMap(event: google.maps.MapMouseEvent) {
-    let item : google.maps.LatLngLiteral
-      if (event.latLng != null){
-    let item =  this.form.items.find(x=>x.type==="AdressInput")
-     item!.lat =this.display.lat;
-     item!.lng =this.display.lat;
-     
-     
-     //= (event.latLng.toJSON());
-    }
-      
+   console.log("moved");
+   
   }
   getIdentifier(type:string){
     // console.log((this.form.items.filter(x=>x.type===type).length)+1);
@@ -120,6 +120,19 @@ export class AddFormComponent implements OnInit {
   }
   move(event: google.maps.MapMouseEvent) {
       if (event.latLng != null) this.display = event.latLng.toJSON();
+      let item : google.maps.LatLngLiteral
+      if (event.latLng != null){
+    let item =  this.form.items.find(x=>x.type==="AddressInput")
+    console.log("item",item);
+    
+     item!.lat =this.display.lat;
+     item!.lng =this.display.lat;
+     
+     
+     //= (event.latLng.toJSON());
+    }
+      
+      
   }
 
 
@@ -167,11 +180,35 @@ this.form.items=[
     else if (template==='restaurantMenu'){
       this.form.title = template;
       this.form.category=template;
+      this.form.items=[
+        {identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
 
-    }
-  }
+{identifier:this.getIdentifier("Title"),label:"Name",type:'Title',value:"Menu Principal"},
+{identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Spaguetti",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Lasagne",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Grillade Mixte",type:'TextInput',value:""},
+
+{identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
+
+{identifier:this.getIdentifier("Title"),label:"Name",type:'Title',value:"Entrée"},
+{identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Salade césar",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Soupe",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Plat Tunisien",type:'TextInput',value:""},
+
+{identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
+
+{identifier:this.getIdentifier("Title"),label:"Name",type:'Title',value:"Desser"},
+{identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Tiramisso",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Boison",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Salade de fruit",type:'TextInput',value:""},
+
     
-
+      ]
+    
+    }}
   ngOnInit(): void {
 
   }

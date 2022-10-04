@@ -12,6 +12,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 })
 export class FormListComponent implements OnInit {
 forms:Form[]=[]
+qrCodeDownloadLink:any
   constructor(private route:Router,private router:ActivatedRoute,private modal: NgbModal,private formService:FormService) {
 
    }
@@ -30,9 +31,17 @@ forms:Form[]=[]
     }    );
 
   }
-
+  loadQrCode(url: any){
+    this.qrCodeDownloadLink = url;
+    console.log(url);
+    
+  }
    getQrCode(id:string){
 this.activeUrl=environment.baseUrl+"visitor/"+id
     this.modal.open(this.qrCode, { size: 'lg' });
+  }
+
+  share(){
+    
   }
 }

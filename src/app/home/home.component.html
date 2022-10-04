@@ -1,0 +1,15 @@
+<div class="form-inline my-2 my-lg-0">
+    <input [(ngModel)]="searchWord" (input)="search()" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</div>
+
+<div *ngFor="let form of forms">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body " ngClass="{{form.style}}">
+          <h5 class="card-title">{{form.category}}</h5>
+          <p class="card-text">{{form.title}}</p>
+          <button [routerLink]="['api/visitor', form.id]"  class="btn btn secondary" style="background-color: white;">Acceder</button>
+        </div>
+      </div>
+    
+    </div>

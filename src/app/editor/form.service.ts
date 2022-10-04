@@ -34,4 +34,8 @@ saveOrUpdate(form:Form){
   getFormByIdForm(formId:string):Observable<Form>{
     return this.httpClient.get<Form>(`${this.baseUrl}/forms/${formId}`)
   }
+  getAllForms():Observable<Form[]>{
+    return this.httpClient.get<Form[]>(`${this.baseUrl}/forms`)
+
+  }
 }

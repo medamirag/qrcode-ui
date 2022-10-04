@@ -1,50 +1,18 @@
-<!-- <button class="btn btn-success" routerLink="/editor/forms/0">Add New Form</button>
-<table>
-<thead>
-<tr>
-    <td>Name</td>
-    <td>Category</td>
-    <td>actions</td>
-</tr>
-</thead>
-<tbody>
-<tr *ngFor="let form of forms">
-<td>
-    {{form.title}}
-</td>
-<td>{{form.category}}</td>
-<td>        <button  class="navbar-brand" (click)="getQrCode(form.id)" >QRCode</button>
-    <button routerLink="/editor/forms/{{form.id}}" class="btn btn-warning">edit</button><button class="btn btn-danger" (click)="deleteByFormID(form.id)">delete</button></td>
-</tr>
-
-</tbody>
-
-</table>
-<ng-template #qrCode let-close="close">
-    <div class="modal-header">
-        {{activeUrl}}
-    </div>
-    <div class="modal-body">
-        <qrcode [qrdata]="activeUrl" [width]="400" [errorCorrectionLevel]="'M'"></qrcode>
-    </div>
-    <div class="modal-footer">
-
-    </div>
-</ng-template> -->
-
-
-  
 
 <!-- ////////////////////////////// issam ////////////////////////////// -->
 
 <button class="btn btn-success" routerLink="/api/editor/forms/0">Add New Form</button>
 
-<table class="table table-striped table-bordered border-primary">
-    <thead  class="table-dark">
+<!-- <table class="table table-striped table-bordered border-primary"> -->
+<table class="table">
+    <!-- <thead  class="table-dark"> -->
+    <thead >
       <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Category</th>
+        <th scope="col">QRCode</th>
+        <th scope="col">Share </th>
         <th scope="col">actions</th>
       </tr>
     </thead>
@@ -57,8 +25,16 @@
             {{form.title}}
         </td>
         <td>{{form.category}}</td>
-        <td>        <button  class="navbar-brand" (click)="getQrCode(form.id)" >QRCode</button>
-            <button routerLink="/api/editor/forms/{{form.id}}" class="btn btn-warning">edit</button><button class="btn btn-danger" (click)="deleteByFormID(form.id)">delete</button></td>
+        <td> <i  (click)="getQrCode(form.id)" class="fa fa2 fa-solid fa-qrcode fa-3x d-flex justify-content-center"></i> </td>
+        <td>
+            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a>
+        
+        </td>
+        <td>     
+             
+            <button routerLink="/api/editor/forms/{{form.id}}" class="btn btn-outline-primary">edit</button><button class="btn btn-outline-danger" (click)="deleteByFormID(form.id)">delete</button></td>
+        
+        
         </tr>
         
         </tbody>
@@ -69,7 +45,7 @@
         {{activeUrl}}
     </div>
     <div class="modal-body">
-        <qrcode [qrdata]="activeUrl" [width]="400" [errorCorrectionLevel]="'M'"></qrcode>
+        <qrcode (qrCodeURL)="loadQrCode($event)"  [qrdata]="activeUrl" [width]="400" [errorCorrectionLevel]="'M'"></qrcode>
     </div>
     <div class="modal-footer">
 

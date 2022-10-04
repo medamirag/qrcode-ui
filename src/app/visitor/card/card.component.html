@@ -1,3 +1,4 @@
+
 <div class="">
     <div [ngClass]="this.form.border">
 <div [ngClass]="this.form.style">
@@ -15,6 +16,14 @@
 
             <div *ngIf="item.type ==='PhoneInput' ">
                 <label class="form-control" >{{item.value}}</label>
+            </div>
+
+
+            <div *ngIf="item.type ==='Title' ">
+                <label class="form-control" ngClass="title" >{{item.value}}</label>
+            </div>
+            <div *ngIf="item.type ==='Divider' ">
+                <label class="form-control" ngClass="title" >{{item.value}}</label>
             </div>
 
             <!-- <div *ngIf="item.type ==='AddressInput' ">
