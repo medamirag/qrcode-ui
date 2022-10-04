@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'editor',
+    path: 'api/editor',
     loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule)
   },
   {
-    path: 'visitor',
+    path: 'api/visitor',
     loadChildren: () => import('./visitor/visitor.module').then(m => m.VisitorModule)
   }
 ];

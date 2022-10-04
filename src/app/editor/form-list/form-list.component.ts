@@ -32,7 +32,7 @@ forms:Form[]=[]
   }
 
    getQrCode(id:string){
-this.activeUrl=environment.baseUrl+"/visitor/"+id
+this.activeUrl=environment.baseUrl+"visitor/"+id
     this.modal.open(this.qrCode, { size: 'lg' });
   }
 }
