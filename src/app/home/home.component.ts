@@ -12,10 +12,17 @@ export class HomeComponent implements OnInit {
   forms: Form[] = []
   baseUrl: string = environment.baseUrl
   searchWord: string = ""
+  logged:boolean=false
   Originalforms: Form[] = []
   constructor(private formService: FormService) { }
   ngOnInit(): void {
     this.formService.getAllForms().subscribe(data => {this.forms = data;this.Originalforms=data})
+if(localStorage.getItem('userId')){
+  this.logged = true
+}
+else{
+  false
+}
   }
 
   search() {
@@ -26,7 +33,7 @@ export class HomeComponent implements OnInit {
     }
     else {
       this.forms=this.Originalforms
-      this.forms = this.forms.filter(form => form.title.includes(this.searchWord)||form.category.includes(this.searchWord))
+      this.forms = this.forms.filter(form => form.title.toUpperCase().includes(this.searchWord.toUpperCase())||form.category.toUpperCase().includes(this.searchWord.toUpperCase()))
 
 
     }

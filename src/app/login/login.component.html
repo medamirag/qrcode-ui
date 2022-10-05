@@ -1,0 +1,18 @@
+<div class="login">
+    <h1 *ngIf="msg" style="color: red;">Please verify your Credentials</h1>
+
+	<h1 *ngIf="sup===false">Login</h1>
+	<h1 *ngIf="sup===true">SignUp</h1>
+    	<input  [(ngModel)]="username" type="text" name="u" placeholder="Username" required="required" />
+        <input [(ngModel)]="password" type="password" name="p" placeholder="Password" required="required" />
+        <div *ngIf="sup===false">
+        <button style="color:orange;width: 300px;font-weight: 600;" (click)="login()" type="submit" class="btn btn-outline-dark">Sign in.</button>
+    </div>
+        <div *ngIf="sup===true">
+        <button style="color:orange;width: 300px;font-weight: 600;" (click)="Subscribe()" type="submit" class="btn btn-outline-dark">Subscribe.</button>
+    </div>
+    <div *ngIf="sup===false">
+
+        <button style="color:orange;width: 300px;font-weight: 600;"(click)="signup()" type="submit" class="btn btn-outline-dark">Sign up.</button>
+ </div>
+</div>

@@ -21,7 +21,6 @@ qrCodeDownloadLink:any
 
 
   ngOnInit(): void {
-    localStorage.setItem('userId',"1")
     this.formService.getAllFormsByUser().subscribe(data=>this.forms=data)
   }
   deleteByFormID(id:string){

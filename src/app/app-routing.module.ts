@@ -1,19 +1,28 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
+import { GuardGuard } from './shared/guard.guard';
 
 const routes: Routes = [
   {
     path: 'api/editor',
-    loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule)
+    loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule),
+    canActivate :[GuardGuard]
   },
   {
     path: 'api/visitor',
     loadChildren: () => import('./visitor/visitor.module').then(m => m.VisitorModule)
   },
   {
-    path:'',component:HomeComponent
+    path:'',component:HomeComponent,
+  },
+  {
+    path:'login',component:LoginComponent,
   }
+  ,
+  {path:"**",component:NotauthorizedComponent}
 ];
 
 @NgModule({

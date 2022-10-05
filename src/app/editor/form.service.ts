@@ -20,6 +20,7 @@ baseUrl = environment.serverUrl
 
 forms:Form[]=[]
 saveOrUpdate(form:Form){
+  form.userId=localStorage.getItem('userId')+""
   console.log("before",form);
   
     return this.httpClient.post<Form>(`${this.baseUrl}/forms/addForm`,form)

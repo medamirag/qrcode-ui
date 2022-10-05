@@ -8,10 +8,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component'
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    LoginComponent,
+    NotauthorizedComponent,
   ],
   imports: [
     BrowserModule,

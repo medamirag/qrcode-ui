@@ -1,26 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-        <!-- Navbar brand -->
-        <i class="fa fa2 fa-solid fa-qrcode"></i>
-        <!-- <button [disabled]="this.form.id!='0'" class="navbar-brand" (click)="getQrCode()" >QRCode</button> -->
-
-        <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent" mdbCollapse>
-            <!-- Left links -->
+<div class="topnav ">
+    <a class="active" routerLink="">Home</a>
+    <div class="buttonStyle topnav-right ">
+        <a (click)="logout()">Logout/Logout</a>
         
-            <!-- Left links -->
-
-
-        </div>
-        <!-- Collapsible wrapper -->
     </div>
-    <!-- Container wrapper -->
-</nav>
+
+    
+</div>
 
 <router-outlet></router-outlet>
