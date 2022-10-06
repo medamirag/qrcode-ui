@@ -1,10 +1,11 @@
 
-<div class="">
+<div class="main d-flex justify-content-center" >
+    <div [ngClass]="this.form.width">
     <div [ngClass]="this.form.border">
 <div [ngClass]="this.form.style">
-    <h1>{{form.title}}</h1>
-    <h1>{{form.category}}</h1>
-    <div *ngFor="let item of form.items">
+    <h1 style="text-shadow: 1px 1px black;font-weight: 800;color:orange;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">{{form.title}}</h1>
+    <h1 style="text-shadow: 1px 1px black;font-weight: 800;color:orange;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">{{form.category}}</h1>
+    <div style="text-shadow: 1px 1px black;font-weight: 800;color:orange;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" *ngFor="let item of form.items">
         <div class="form-group">
 
             <label class="col-md-4"> {{item.label}} </label>
@@ -20,7 +21,7 @@
 
 
             <div *ngIf="item.type ==='Title' ">
-                <label class="form-control" ngClass="title" >{{item.value}}</label>
+                <label  class="form-control" ngClass="title" >{{item.value}}</label>
             </div>
             <div *ngIf="item.type ==='Divider' ">
                 <label class="form-control" ngClass="title" >{{item.value}}</label>
@@ -41,6 +42,7 @@
             </div>
         </div>
 
+    </div>
     </div>
 </div>
 </div>

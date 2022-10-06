@@ -185,13 +185,13 @@
                        <hr class="w-100  Divider bg-dark"> 
 
                        <span  class="input-group-text" id="basic-addon1">            <i (click)="remove(item.label,item.identifier)" class="fa fas fa-minus-circle"></i>
-                        &nbsp;   {{item.label}}</span>
+                        &nbsp;   </span>
           </div>
 
 
           <div  *ngIf="item.type ==='Title' " class="input-group mb-3">
             <span  class="input-group-text" id="basic-addon1">            <i (click)="remove(item.label,item.identifier)" class="fa fas fa-minus-circle"></i>
-                &nbsp;   {{item.label}}</span>
+               </span>
             <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
           </div>
        

@@ -26,7 +26,6 @@ export class AddFormComponent implements OnInit {
     'Menu Restaurant']
   constructor(private route: Router ,private router:ActivatedRoute,private modal: NgbModal,private formService:FormService,private styleService : StylesService)
      {
-      console.log("this.center",this.center);
 
       this.styles=this.styleService.getAllStyles();
       this.borders=this.styleService.getAllBorders();
@@ -34,7 +33,6 @@ export class AddFormComponent implements OnInit {
       this.activatedRoute=this.router.snapshot.params['id']
       
       if(this.activatedRoute!='0'){
-        console.log("this.activatedRoute"+this.activatedRoute);
         
         this.formService.getFormByIdForm(this.activatedRoute).subscribe(data=>{this.form=data;
        let item =  this.form.items.find(x=>x.type==="AddressInput");
@@ -51,11 +49,10 @@ export class AddFormComponent implements OnInit {
   }
   getIdentifier(type:string){
     // console.log((this.form.items.filter(x=>x.type===type).length)+1);
-        
+
     return (this.form.items.filter(x=>x.type===type).length )+1 
   }
   add(type:string){
-    console.log(type);
 
     if(type==='EmailInput')
     {
@@ -87,7 +84,7 @@ export class AddFormComponent implements OnInit {
 
       
     
-        this.form.items.push({identifier:this.getIdentifier(type),label:"",type:type,value:""})
+        this.form.items.push({identifier:this.getIdentifier(type),label:this.getIdentifier(type)+"",type:type,value:""})
   
     
     }
@@ -128,7 +125,6 @@ export class AddFormComponent implements OnInit {
       let item : google.maps.LatLngLiteral
       if (event.latLng != null){
     let item =  this.form.items.find(x=>x.type==="AddressInput")
-    console.log("item",item);
     
      item!.lat =this.display.lat;
      item!.lng =this.display.lat;
@@ -190,23 +186,23 @@ this.form.items=[
         {identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
 
 {identifier:this.getIdentifier("Title"),label:"Name",type:'Title',value:"Menu Principal"},
-{identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
+{identifier:1,label:"",type:'Divider',value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Spaguetti",type:'TextInput',value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Lasagne",type:'TextInput',value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Grillade Mixte",type:'TextInput',value:""},
 
-{identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
+{identifier:2,label:"",type:'Divider',value:""},
 
 {identifier:this.getIdentifier("Title"),label:"Name",type:'Title',value:"Entrée"},
-{identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
+{identifier:3,label:"",type:'Divider',value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Salade césar",type:'TextInput',value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Soupe",type:'TextInput',value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Plat Tunisien",type:'TextInput',value:""},
 
-{identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
+{identifier:4,label:"",type:'Divider',value:""},
 
 {identifier:this.getIdentifier("Title"),label:"Name",type:'Title',value:"Desser"},
-{identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
+{identifier:5,label:"",type:'Divider',value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Tiramisso",type:'TextInput',value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Boison",type:'TextInput',value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Salade de fruit",type:'TextInput',value:""},
@@ -214,7 +210,8 @@ this.form.items=[
     
       ]
     
-    }}
+    }
+  }
   ngOnInit(): void {
 
   }
@@ -232,7 +229,6 @@ this.activeUrl=environment.baseUrl+"/visitor/"+this.router.snapshot.params['id']
   }
   selectwidth(width:string){
     this.form.width=width;
-    console.log(width);
     
     
   }
