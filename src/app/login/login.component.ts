@@ -17,7 +17,7 @@ sup:boolean=false
   ngOnInit(): void {
     if(Number(localStorage.getItem('userId'))){
 
-      this.router.navigate(['/api/editor'])
+      this.router.navigate(['/editor'])
     }
   }
 
@@ -30,7 +30,7 @@ this.userService.login(this.username,this.password).subscribe(data=>{
 localStorage.setItem('userId',data.id)
 if(Number(localStorage.getItem('userId'))){
 
-  this.router.navigate(['/api/editor'])
+  this.router.navigate(['/editor'])
 }
 }
 else{
@@ -53,7 +53,7 @@ Subscribe(){
   localStorage.setItem('userId',data.id)
   if(Number(localStorage.getItem('userId'))){
   
-    this.router.navigate(['/api/editor'])
+    this.router.navigate(['/editor'])
   }
   }
     

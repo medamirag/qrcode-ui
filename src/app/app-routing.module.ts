@@ -7,12 +7,12 @@ import { GuardGuard } from './shared/guard.guard';
 
 const routes: Routes = [
   {
-    path: 'api/editor',
+    path: 'editor',
     loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule),
     canActivate :[GuardGuard]
   },
   {
-    path: 'api/visitor',
+    path: 'visitor',
     loadChildren: () => import('./visitor/visitor.module').then(m => m.VisitorModule)
   },
   {

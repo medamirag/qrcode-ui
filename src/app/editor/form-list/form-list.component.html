@@ -11,7 +11,7 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
          
           <li class="nav-item">
-            <a routerLink="/api/editor/forms/0" class="nav-link "  style="font-weight: 600;color: black">Add New Form</a>
+            <a routerLink="/editor/forms/0" class="nav-link "  style="font-weight: 600;color: black">Add New Form</a>
           </li>
           
         </ul>
@@ -37,7 +37,6 @@
         <th scope="col">Name</th>
         <th  scope="col">Category</th>
         <th scope="col">QRCode</th>
-        <th scope="col">Share </th>
         <th scope="col">actions</th>
       </tr>
     </thead>
@@ -51,13 +50,10 @@
         </td>
         <td>{{form.category}}</td>
         <td> <i  (click)="getQrCode(form.id)" class="fa fa2 fa-solid fa-qrcode fa-3x d-flex justify-content-center"></i> </td>
-        <td>
-            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a>
-        
-        </td>
+      
         <td>     
              
-           <i  style="color: black;" routerLink="/api/editor/forms/{{form.id}}" class="fa far fa-edit fa-2x"></i>   <i (click)="deleteByFormID(form.id)" style="color:black" class="fa fas fa-minus-circle fa-2x"></i> </td>
+           <i  style="color: black;" routerLink="/editor/forms/{{form.id}}" class="fa far fa-edit fa-2x"></i>   <i (click)="deleteByFormID(form.id)" style="color:black" class="fa fas fa-minus-circle fa-2x"></i> </td>
         
         
         </tr>

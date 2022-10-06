@@ -20,12 +20,17 @@ export class AddFormComponent implements OnInit {
       lng: 35.49961609339906,
   };
   zoom = 16;
+
+  categories:String[]=['Carte Visite',
+    'Patient Alzheimer',
+    'Menu Restaurant']
   constructor(private route: Router ,private router:ActivatedRoute,private modal: NgbModal,private formService:FormService,private styleService : StylesService)
      {
       console.log("this.center",this.center);
 
       this.styles=this.styleService.getAllStyles();
       this.borders=this.styleService.getAllBorders();
+      this.widths=this.styleService.getAllWidths();
       this.activatedRoute=this.router.snapshot.params['id']
       
       if(this.activatedRoute!='0'){
@@ -140,7 +145,8 @@ export class AddFormComponent implements OnInit {
 
   styles:Style[]=[]
   borders:string[]=[]
-  form:Form={category:"",id:"",border:"border",
+  widths:string[]=[]
+  form:Form={category:"",id:"",border:"border",width:"width5",
   items:[
   ],
   title:"",userId:"1",style:""
@@ -151,9 +157,9 @@ export class AddFormComponent implements OnInit {
 this.form.title = template;
 this.form.category=template;
 this.form.items=[
-{identifier:this.getIdentifier("TextInput"),label:"Patient Name",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Patient's Name",type:'TextInput',value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Brother's Name",type:'TextInput',value:""},
-{identifier:this.getIdentifier("TextInput"),label:"Wife Name",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Wife's Name",type:'TextInput',value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Son's Name",type:'TextInput',value:""},
 {identifier:this.getIdentifier("PhoneInput"),label:"Wife's Phone",type:'PhoneInput',value:""},
 {identifier:this.getIdentifier("PhoneInput"),label:"Brother's Phone",type:'PhoneInput',value:""},
@@ -224,10 +230,16 @@ this.activeUrl=environment.baseUrl+"/visitor/"+this.router.snapshot.params['id']
     this.form.border=border;
     
   }
+  selectwidth(width:string){
+    this.form.width=width;
+    console.log(width);
+    
+    
+  }
  
   saveOrUpdate(){
     this.formService.saveOrUpdate(this.form).subscribe(data=>{console.log(data);
-      this.route.navigate(['/api/editor']);
+      this.route.navigate(['/editor']);
     } 
        )
   }

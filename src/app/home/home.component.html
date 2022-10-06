@@ -8,7 +8,7 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
        
         <li class="nav-item">
-          <a routerLink="/api/editor/" class="nav-link "  style="font-weight: 600;color: black">Form Liste</a>
+          <a routerLink="/editor/" class="nav-link "  style="font-weight: 600;color: black">Form Liste</a>
         </li>
         
       </ul>
@@ -28,7 +28,7 @@
         <div class="card-body " ngClass="{{form.style}}" >
           <h5 class="card-title">{{form.category}}</h5>
           <p class="card-text">{{form.title}}</p>
-          <button [routerLink]="['api/visitor', form.id]"  class="btn btn secondary" style="background-color: rgba(196, 173, 173, 0.753);">Acceder</button>
+          <button [routerLink]="['visitor', form.id]"  class="btn btn secondary" style="background-color: rgba(196, 173, 173, 0.753);">Acceder</button>
         </div>
       </div>
     

@@ -9,6 +9,7 @@ export interface Form {
     style:string,
     id:string
     border?:string
+    width:string
  
 
 }

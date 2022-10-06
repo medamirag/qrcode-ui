@@ -8,7 +8,7 @@
 
         <ul style="font-weight: 700; cursor: pointer; text-align: left; padding:0px 170px;" class="navbar-nav  mb-2 mb-lg-0"   >
             <li class="nav-item">
-                <a style="color: black" class="nav-link active" routerLink="/api/editor">Cancel </a>
+                <a style="color: black" class="nav-link active" routerLink="/editor">Cancel </a>
             </li>
 
             <li class="nav-item">
@@ -44,7 +44,7 @@
 
 
 <!-- SideBar -->
-<div class="sidenav" >
+<div class="sidenav " >
     <div class="d-flex justify-content-center">
        
         <td></td>
@@ -52,7 +52,7 @@
     </div>
     <ul class="">
        <!-- <li>
-        <button class="btn btn-warning justify-content-sm-center btn-lg" routerLink="/api/editor">Cancel</button>
+        <button class="btn btn-warning justify-content-sm-center btn-lg" routerLink="/editor">Cancel</button>
        </li>
        <li>
         <button class="btn btn-primary justify-content-sm-center btn-lg" (click)="saveOrUpdate()">SAVE</button>       </li> -->
@@ -116,6 +116,16 @@
 
 
     </ul>
+    <h1 style="color: white;text-align: center;">Size</h1>
+    <ul>
+        <li *ngFor="let width of widths;let i=index" style="padding: 5px;display:inline-block ">
+            <div (click)="selectwidth(width)"
+                style="background-color: orange;color: white;text-align: center; border-style: solid ;width: 50px;height : 30px">
+                {{i+1}}
+            </div>
+            <br>
+        </li>
+    </ul>
     <h1 style="color: white;text-align: center;">Borders</h1>
     <ul>
         <li *ngFor="let border of borders" style="padding: 0px;display:inline-block ">
@@ -140,16 +150,30 @@
 </div>
 
 <!-- Form -->
-<div class="main">
-<div [ngClass]="this.form.border">
-<div [ngClass]="this.form.style">
+<div class="main d-flex justify-content-center" >
+<!-- <div [ngClass]="this.form.style,this.form.border,this.form.width"> -->
+    <div [ngClass]="this.form.width">
+
+    <div [ngClass]="this.form.border">
+        <div [ngClass]="this.form.style">
+
+    <div style="font-weight: 500;">Title</div> 
+
     <input [(ngModel)]="form.title" type="text" class="form-control" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1">
-    <input [(ngModel)]="form.category" type="text" class="form-control" placeholder="Category" aria-label="Username" aria-describedby="basic-addon1">
+   <div style="font-weight: 500;">Category</div> 
+
+    <select [(ngModel)]="form.category" type="text" class="form-control" placeholder="Category" aria-label="Username" aria-describedby="basic-addon1">
+   <option *ngFor="let category of categories" [ngValue]="category" [selected]="category===form.category" >{{category}}</option>
+   <option  [ngValue]="'Personalized'" [selected]="'Personalized'===form.category" >Personalized</option>
+    
+</select>
+  <br>
     <div *ngFor="let item of form.items">
         
         <div *ngIf="item.type ==='EmailInput' " class="input-group mb-3">
             <div class="input-group-prepend">
-              <span (click)="remove(item.label,item.identifier)" class="input-group-text" id="basic-addon1">{{item.label}}</span>
+              <span  class="input-group-text" id="basic-addon1">            <i (click)="remove(item.label,item.identifier)" class="fa fas fa-minus-circle"></i>
+              &nbsp;   {{item.label}}</span>
             </div>
             <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
           </div>
@@ -157,24 +181,34 @@
       
            
 
-        <div (click)="remove(item.label,item.identifier)" *ngIf="item.type ==='Divider' " class="input-group mb-3">
+        <div *ngIf="item.type ==='Divider' " class="input-group mb-3">
                        <hr class="w-100  Divider bg-dark"> 
+
+                       <span  class="input-group-text" id="basic-addon1">            <i (click)="remove(item.label,item.identifier)" class="fa fas fa-minus-circle"></i>
+                        &nbsp;   {{item.label}}</span>
           </div>
 
 
-          <div (click)="remove(item.label,item.identifier)" *ngIf="item.type ==='Title' " class="input-group mb-3">
-            
+          <div  *ngIf="item.type ==='Title' " class="input-group mb-3">
+            <span  class="input-group-text" id="basic-addon1">            <i (click)="remove(item.label,item.identifier)" class="fa fas fa-minus-circle"></i>
+                &nbsp;   {{item.label}}</span>
             <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
           </div>
        
         <div *ngIf="item.type ==='PhoneInput' " class="input-group mb-3">
             <div class="input-group-prepend">
-              <span (click)="remove(item.label,item.identifier)" class="input-group-text" id="basic-addon1">{{item.label}}</span>
-            </div>
+
+                <span  class="input-group-text" id="basic-addon1">            <i (click)="remove(item.label,item.identifier)" class="fa fas fa-minus-circle"></i>
+                    &nbsp;   {{item.label}}</span>
+                
+                </div>
             <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
           </div>
        
           <div *ngIf="item.type ==='AddressInput' " class="input-group mb-3">
+            <span  class="input-group-text" id="basic-addon1">            <i (click)="remove(item.label,item.identifier)" class="fa fas fa-minus-circle"></i>
+                &nbsp;   {{item.label}}</span>
+
             <div class="d-flex justify-content-center">
                 <google-map *ngIf="item.type ==='AddressInput' " height="250px" width="250px" [center]="center"
                     [zoom]="zoom" (mapClick)="moveMap($event)" (mapMousemove)="move($event)">
@@ -188,8 +222,8 @@
 
             <div *ngIf="item.type ==='TextInput' " class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span (click)="remove(item.label,item.identifier)" class="input-group-text" id="basic-addon1">{{item.label}}</span>
-                </div>
+  <span  class="input-group-text" id="basic-addon1">            <i (click)="remove(item.label,item.identifier)" class="fa fas fa-minus-circle"></i>
+                        &nbsp;   {{item.label}}</span>                </div>
                 <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
               </div>
     
@@ -200,10 +234,11 @@
 
 
 
+
+
+
 </div>
-
-
-
+</div>
 </div>
 </div>
 <ng-template #qrCode let-close="close">

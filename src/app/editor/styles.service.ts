@@ -21,10 +21,16 @@ styles:Style[]=[
 borders:string[]=["border1","border2","border3","border4","border5","border6","border7"
 
 ]
+widths:string[]=["width3","width4","width5","width6","width7","width9","width8","width10"
+
+]
 
   constructor() { }
   getAllStyles(){
     return this.styles
+  }
+  getAllWidths(){
+    return this.widths
   }
   getAllBorders(){
     return this.borders
