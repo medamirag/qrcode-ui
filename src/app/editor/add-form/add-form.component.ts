@@ -174,6 +174,7 @@ this.hasMap = true
 }
     else if(template==='businessCard'){
       this.form.title = template;
+      this.form.private = false;
       this.form.category=template;
       this.form.items=[{identifier:this.getIdentifier("EmailInput"),label:"Email",type:"EmailInput",value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Name",type:'TextInput',value:""},
@@ -188,6 +189,7 @@ this.hasMap = true
     }
     else if (template==='restaurantMenu'){
       this.form.title = template;
+      this.form.private = false;
       this.form.category=template;
       this.form.items=[
         {identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
