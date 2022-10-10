@@ -24,6 +24,12 @@ sup:boolean=false
   login(){
 this.userService.login(this.username,this.password).subscribe(data=>{
   console.log(data);
+  if(data===null)
+{
+  data={id:0}
+console.log(data);
+
+}
   if(data.id>0){
     console.log(data);
     
