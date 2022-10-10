@@ -105,11 +105,14 @@
 
         </li>
 
-        <li>
-            <a (click)="add('AddressInput')">
-                <i class="fa fa2 far fa-map"></i> <span class="nav-text">
-                    Adress
-                </span>
+        <li >
+            <a  (click)="add('AddressInput')">
+
+                <div [ngClass]="hasMap?'disabled':'activated'">
+                    Address
+                    <i  class="fa fa2 far fa-map"></i> <span class="nav-text">                 </span>
+
+                </div>
             </a>
 
         </li>
@@ -168,7 +171,7 @@
     
 </select>
   <br>
-    <div *ngFor="let item of form.items">
+    <div class="d-flex justify-content-center" *ngFor="let item of form.items">
         
         <div *ngIf="item.type ==='EmailInput' " class="input-group mb-3">
             <div class="input-group-prepend">
@@ -210,7 +213,7 @@
                 &nbsp;   {{item.label}}</span>
 
             <div class="d-flex justify-content-center">
-                <google-map *ngIf="item.type ==='AddressInput' " height="250px" width="250px" [center]="center"
+                <google-map  *ngIf="item.type ==='AddressInput' " height="250px" width="250px" [center]="center"
                     [zoom]="zoom" (mapClick)="moveMap($event)" (mapMousemove)="move($event)">
                 </google-map>
             </div>

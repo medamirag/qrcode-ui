@@ -18,7 +18,16 @@ export class CardComponent implements OnInit {
   constructor(private formService:FormService,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.formService.getFormByIdForm(this.activatedRoute.snapshot.params['id']).subscribe(data=>this.form=data)
+    this.formService.getFormByIdForm(this.activatedRoute.snapshot.params['id']).subscribe(data=>{this.form=data;
+    let item =  this.form.items.find(x=>x.type==="AddressInput");
+    if(item){
+     this.center = {lat:Number(item.lat),lng:Number(item.lng)}
+
+
+    }
+  }
+    )
+ 
   }
   
 
@@ -27,7 +36,7 @@ export class CardComponent implements OnInit {
       lat: 24,
       lng: 12
   };
-  zoom = 4;
+  zoom = 16;
   moveMap(event: google.maps.MapMouseEvent) {
       if (event.latLng != null) this.center = (event.latLng.toJSON());
       console.log(this.center);

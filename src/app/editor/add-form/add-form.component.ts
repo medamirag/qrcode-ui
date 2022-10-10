@@ -15,9 +15,13 @@ export class AddFormComponent implements OnInit {
   @ViewChild('qrCode', { static: true }) qrCode!: TemplateRef<any>;
   display: any;
   activeUrl:string=""
+  hasMap:boolean=false;
   center: google.maps.LatLngLiteral = {
-      lat: 35.49961609339906,
-      lng: 35.49961609339906,
+      lat: 35.67548283013822
+,
+      lng: 10.096564748426976
+
+,
   };
   zoom = 16;
 
@@ -37,6 +41,7 @@ export class AddFormComponent implements OnInit {
         this.formService.getFormByIdForm(this.activatedRoute).subscribe(data=>{this.form=data;
        let item =  this.form.items.find(x=>x.type==="AddressInput");
        if(item){
+        this.hasMap = true
         this.center = {lat:Number(item.lat),lng:Number(item.lng)}
        }
       
@@ -44,11 +49,9 @@ export class AddFormComponent implements OnInit {
       }
      }
   moveMap(event: google.maps.MapMouseEvent) {
-   console.log("moved");
    
   }
   getIdentifier(type:string){
-    // console.log((this.form.items.filter(x=>x.type===type).length)+1);
 
     return (this.form.items.filter(x=>x.type===type).length )+1 
   }
@@ -65,8 +68,11 @@ export class AddFormComponent implements OnInit {
     }
     else if(type==='AddressInput'){
 
-      this.form.items.push({identifier:this.getIdentifier(type),label:"Address",type:type,value:""})
+      if(!this.hasMap){
+        this.form.items.push({identifier:this.getIdentifier(type),label:"Address",type:type,value:""})
+        this.hasMap = true
 
+      }
     }
     
     else if(type==='Title'){
@@ -115,7 +121,9 @@ export class AddFormComponent implements OnInit {
       
 
       this.form.items=this.form.items.filter(x=>!(x.label===label&&x.identifier===identifier))
-      
+      if(label="AddressInput"){
+        this.hasMap = false;
+      }
       // this.form.items=this.form.items.filter(x=>x.identifier!=identifier)
 
     }
@@ -127,7 +135,7 @@ export class AddFormComponent implements OnInit {
     let item =  this.form.items.find(x=>x.type==="AddressInput")
     
      item!.lat =this.display.lat;
-     item!.lng =this.display.lat;
+     item!.lng =this.display.lng;
      
      
      //= (event.latLng.toJSON());
@@ -161,11 +169,9 @@ this.form.items=[
 {identifier:this.getIdentifier("PhoneInput"),label:"Brother's Phone",type:'PhoneInput',value:""},
 {identifier:this.getIdentifier("PhoneInput"),label:"Son's Phone",type:'PhoneInput',value:""},
 {identifier:this.getIdentifier("AddressInput"),label:"Patient's Address",type:'AddressInput',value:""},
-{identifier:this.getIdentifier("AddressInput"),label:"Brother's Address",type:'AddressInput',value:""},
-{identifier:this.getIdentifier("AddressInput"),label:"Son's Address",type:'AddressInput',value:""},
-
 ]
-    }
+this.hasMap = true
+}
     else if(template==='businessCard'){
       this.form.title = template;
       this.form.category=template;
@@ -177,6 +183,7 @@ this.form.items=[
 {identifier:this.getIdentifier("AddressInput"),label:"Company's Address",type:'AddressInput',value:""},
 
 ]
+this.hasMap = true
 
     }
     else if (template==='restaurantMenu'){

@@ -73,7 +73,13 @@
             width: 30px;
             height: 20px;
           }
-          
+          .disabled{
+            color: gray;
+          }
+          .disabled:hover{
+            color:gray;
+          }
+        
     ///// divider
           // hr {
           //   display: block;
