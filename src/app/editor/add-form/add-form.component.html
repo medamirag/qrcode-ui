@@ -171,7 +171,7 @@
     
 </select>
   <br>
-    <div class="d-flex justify-content-center" *ngFor="let item of form.items">
+    <div    *ngFor="let item of form.items">
         
         <div *ngIf="item.type ==='EmailInput' " class="input-group mb-3">
             <div class="input-group-prepend">
@@ -212,7 +212,7 @@
             <span  class="input-group-text" id="basic-addon1">            <i (click)="remove(item.label,item.identifier)" class="fa fas fa-minus-circle"></i>
                 &nbsp;   {{item.label}}</span>
 
-            <div class="d-flex justify-content-center">
+            <div style="  margin: auto;" >
                 <google-map  *ngIf="item.type ==='AddressInput' " height="250px" width="250px" [center]="center"
                     [zoom]="zoom" (mapClick)="moveMap($event)" (mapMousemove)="move($event)">
                 </google-map>

@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   constructor(private userService:LoginService,private router:Router) { }
 username:string=""
 password:string=""
+message:string=""
 msg:boolean=false;
 sup:boolean=false
   ngOnInit(): void {
@@ -23,26 +24,19 @@ sup:boolean=false
 
   login(){
 this.userService.login(this.username,this.password).subscribe(data=>{
-  console.log(data);
-  if(data===null)
+  if(data.message==="OK")
 {
-  data={id:0}
-console.log(data);
-
-}
-  if(data.id>0){
-    console.log(data);
-    
-localStorage.setItem('userId',data.id)
-if(Number(localStorage.getItem('userId'))){
-
+  localStorage.setItem('userId',data.user.id)
   this.router.navigate(['/editor'])
-}
+
+
 }
 else{
-  this.msg=true
-}
+  this.message = data.message
+  this.msg = true;
   
+
+}
 })
   }
 signup(){
