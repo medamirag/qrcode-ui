@@ -16,7 +16,8 @@ export class HomeComponent implements OnInit {
   Originalforms: Form[] = []
   constructor(private formService: FormService) { }
   ngOnInit(): void {
-    this.formService.getAllForms().subscribe(data => {this.forms = data;this.Originalforms=data})
+    this.formService.getAllForms().subscribe(data => {this.forms = data;this.Originalforms=data;
+    this.forms=this.forms.filter(f=>f.private===false)})
 if(localStorage.getItem('userId')){
   this.logged = true
 }

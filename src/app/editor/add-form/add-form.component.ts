@@ -150,7 +150,7 @@ export class AddFormComponent implements OnInit {
   styles:Style[]=[]
   borders:string[]=[]
   widths:string[]=[]
-  form:Form={category:"",id:"",border:"border",width:"width5",
+  form:Form={category:"",id:"",border:"border",width:"width5",private:true,
   items:[
   ],
   title:"",userId:"1",style:""

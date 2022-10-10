@@ -10,7 +10,7 @@ import { Form } from './form';
 export class FormService {
   constructor(private httpClient:HttpClient) { }
 
-form:Form={category:"",width:"width5",
+form:Form={category:"",width:"width5",private:true,
 style:"",
 items:[
 ],

@@ -9,7 +9,7 @@ import { FormService } from 'src/app/editor/form.service';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  form:Form={category:"",id:"",width:"width5",
+  form:Form={category:"",id:"",width:"width5",private:true,
   style:"",
   items:[
   ],

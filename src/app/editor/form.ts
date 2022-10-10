@@ -10,6 +10,7 @@ export interface Form {
     id:string
     border?:string
     width:string
+    private:boolean
  
 
 }
