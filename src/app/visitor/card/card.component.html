@@ -1,26 +1,28 @@
 
 <div class="main d-flex justify-content-center" >
-    <div [ngClass]="this.form.width">
-    <div [ngClass]="this.form.border">
+    <!-- <div [ngClass]="this.form.width"> -->
+    <!-- <div [ngClass]="this.form.border"> -->
+
 <div [ngClass]="this.form.style">
-    <h1 style="text-shadow: 1px 1px black;font-weight: 800;color:orange;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">{{form.title}}</h1>
-    <h1 style="text-shadow: 1px 1px black;font-weight: 800;color:orange;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">{{form.category}}</h1>
+    <!-- <h1 style="text-shadow: 1px 1px black;font-weight: 800;color:orange;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">{{form.title}}</h1> -->
+    <!-- <h1 style="text-shadow: 1px 1px black;font-weight: 800;color:orange;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">{{form.category}}</h1> -->
     <div style="text-shadow: 1px 1px black;font-weight: 800;color:orange;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" *ngFor="let item of form.items">
+        
         <div class="form-group">
 
             <label class="col-md-4" *ngIf="item.type !='Title' "> {{item.label}} </label>
 
             <div *ngIf="item.type ==='EmailInput' ">
-                <label class="form-control " >{{item.value}}</label>
+                <label class="form-control " ngClass="PhoneInput" >{{item.value}}</label>
             </div>
         </div>
 
             <div *ngIf="item.type ==='PhoneInput' ">
-                <label class="form-control" >{{item.value}}</label>
+                <label class="form-control"  ngClass="PhoneInput" >   {{item.value}}</label>
             </div>
 
 
-            <div *ngIf="item.type ==='Title' ">
+            <div  *ngIf="item.type ==='Title' ">
                 <label  class="form-control" ngClass="title" >{{item.value}}</label>
             </div>
             <div *ngIf="item.type ==='Divider' ">
@@ -31,8 +33,8 @@
                 <label class="form-control" >{{item.value}}</label>
             </div> -->
 
-            <div *ngIf="item.type ==='TextInput' ">
-                <label class="form-control" >{{item.value}}</label>
+            <div  *ngIf="item.type ==='TextInput'  ">
+                <label class="form-control" ngClass="TextInput" >{{item.value}}</label>
             </div>
 
             <div class="d-flex justify-content-center">
@@ -40,11 +42,11 @@
                     [zoom]="zoom" (mapClick)="moveMap($event)" (mapMousemove)="move($event)">
                 </google-map>
             </div>
-        </div>
+        <!-- </div> -->
 
     </div>
     </div>
-</div>
+<!-- </div> -->
 </div>
 
 
