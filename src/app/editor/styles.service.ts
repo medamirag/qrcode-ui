@@ -9,12 +9,12 @@ styles:Style[]=[
   {class:"style1 ",title:"Style 1"},
   {class:"style2",title:"Style 2"},
   {class:"style3",title:"Style 3"},
-  {class:"bg-primary ",title:"Style 4"},
-  {class:"bg-secondary",title:"Style 5"},
-  {class:"bg-warning",title:"Style 6"},
-  {class:"bg-danger",title:"Style 7"},
-  {class:"bg-white",title:"Style 8"},
-  {class:"bg-success",title:"Style 9"},
+  {class:"style4",title:"Style 4"},
+  {class:"style5",title:"Style 5"},
+  {class:"style6",title:"Style 6"},
+  {class:"style7",title:"Style 7"},
+  {class:"style8",title:"Style 8"},
+  {class:"style9",title:"Style 9"},
   {class:"style10",title:"Style 10"},
 
 ]

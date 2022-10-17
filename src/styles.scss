@@ -1,154 +1,141 @@
 /* You can add global styles to this file, and also import other style files */
 
-.base {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 100vh;
-    width: 100vw;
-    margin: -8px;
-    padding-top: 1vh;
-}
-.style3 {
-    background-image: linear-gradient(45deg, transparent 20%, black 25%, transparent 25%), 
-                      linear-gradient(-45deg, transparent 20%, black 25%, transparent 25%), 
-                      linear-gradient(-45deg, transparent 75%, black 80%, transparent 0),
-                      radial-gradient(gray 2px, transparent 0);
-    background-size: 30px 30px, 30px 30px;
-  }
+// .base {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     flex-wrap: wrap;
+//     height: 100vh;
+//     width: 100vw;
+//     margin: -8px;
+//     padding-top: 1vh;
+// }
 
-.style1 {
-    background-color: #00b5f7;
-    background-size: 53px 53px;
-    background-image: radial-gradient(transparent 28px,
-            #ffffff 28px,
-            #ffffff 32px,
-            transparent 32px);
-}
 
-.style2 {
+
+
+// .border {
+//   padding: 20px;
+//   margin: 10px auto;
+//   line-height: 3;
+//   /*background-color: #f66;*/
+//   /*background-clip: padding-box;*/
+//   /* use instead : */
+//   background:linear-gradient(rgb(170, 170, 165),rgb(65, 94, 62)) no-repeat center center;
+//   background-size: calc(100% + 20px)  calc(100% + 20px);
+//   text-align: center;
+//   /* border-related properties */
+//   // border: 20px solid black;  
  
-    color: white;
-    background-color: #66a3ff;
+  
+// }
 
-    background-image: repeating-linear-gradient(transparent, transparent 50px, purple 50px, purple 53px, transparent 53px, transparent 63px, purple 63px, purple 66px, transparent 66px, transparent 116px, rgba(0, 0, 0, .5) 116px, rgba(0, 0, 0, .5) 166px, rgba(255, 255, 255, .2) 166px, rgba(255, 255, 255, .2) 169px, rgba(0, 0, 0, .5) 169px, rgba(0, 0, 0, .5) 179px, rgba(255, 255, 255, .2) 179px, rgba(255, 255, 255, .2) 182px, rgba(0, 0, 0, .5) 182px, rgba(0, 0, 0, .5) 232px, transparent 232px),
-        repeating-linear-gradient(270deg, transparent, transparent 50px, purple 50px, purple 53px, transparent 53px, transparent 63px, purple 63px, purple 66px, transparent 66px, transparent 116px, rgba(0, 0, 0, .5) 116px, rgba(0, 0, 0, .5) 166px, rgba(255, 255, 255, .2) 166px, rgba(255, 255, 255, .2) 169px, rgba(0, 0, 0, .5) 169px, rgba(0, 0, 0, .5) 179px, rgba(255, 255, 255, .2) 179px, rgba(255, 255, 255, .2) 182px, rgba(0, 0, 0, .5) 182px, rgba(0, 0, 0, .5) 232px, transparent 232px);
-
-}
-.style10 {
-    background: radial-gradient(1.5em 6.28571em at 1.95em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(1.5em 6.28571em at -0.45em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 1.5em 5.5em, radial-gradient(2.3em 4.57143em at 2.99em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(2.3em 4.57143em at -0.69em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 2.3em 4em, radial-gradient(3.5em 6.28571em at 4.55em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(3.5em 6.28571em at -1.05em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 3.5em 5.5em, radial-gradient(#15ffa5, #00ced1);
-    background-color: mediumspringgreen;
-    background-size: 1.5em 11em, 1.5em 11em, 2.3em 8em, 2.3em 8em, 3.5em 11em, 3.5em 11em, 100% 100%;
-    background-repeat: repeat;
-  };
-
-  .border1 {
-    padding: 20px;
-    margin: 10px auto;
-    line-height: 3;
-    /*background-color: #f66;*/
-    /*background-clip: padding-box;*/
-    /* use instead : */
-    background:linear-gradient(rgb(255, 255, 255),rgb(0, 0, 0)) no-repeat center center;
-    background-size: calc(100% + 20px)  calc(100% + 20px);
-    text-align: center;
-    /* border-related properties */
-    // border: 20px solid black;  
+// .border1 {
+  //   padding: 20px;
+    //   margin: 10px auto;
+    //   line-height: 3;
+    //   /*background-color: #f66;*/
+    //   /*background-clip: padding-box;*/
+    //   /* use instead : */
+    //   background:linear-gradient(rgb(255, 255, 255),rgb(0, 0, 0)) no-repeat center center;
+    //   background-size: calc(100% + 20px)  calc(100% + 20px);
+    //   text-align: center;
+    //   /* border-related properties */
+    //   // border: 20px solid black;  
+    
+    
+    // }
+  // .border2 {
+  //   padding: 20px;
+  //   margin: 10px auto;
+  //   line-height: 3;
+  //   /*background-color: #f66;*/
+  //   /*background-clip: padding-box;*/
+  //   /* use instead : */
+  //   background:linear-gradient(rgb(218, 23, 23),rgb(21, 63, 204)) no-repeat center center;
+  //   background-size: calc(100% + 20px)  calc(100% + 20px);
+  //   text-align: center;
+  //   /* border-related properties */
+  //   // border: 20px solid black;  
    
     
-  }
-  .border2 {
-    padding: 20px;
-    margin: 10px auto;
-    line-height: 3;
-    /*background-color: #f66;*/
-    /*background-clip: padding-box;*/
-    /* use instead : */
-    background:linear-gradient(rgb(218, 23, 23),rgb(21, 63, 204)) no-repeat center center;
-    background-size: calc(100% + 20px)  calc(100% + 20px);
-    text-align: center;
-    /* border-related properties */
-    // border: 20px solid black;  
+  // }
+  // .border3 {
+  //   padding: 20px;
+  //   margin: 10px auto;
+  //   line-height: 3;
+  //   /*background-color: #f66;*/
+  //   /*background-clip: padding-box;*/
+  //   /* use instead : */
+  //   background:linear-gradient(rgb(107, 19, 189),rgb(65, 65, 68)) no-repeat center center;
+  //   background-size: calc(100% + 20px)  calc(100% + 20px);
+  //   text-align: center;
+  //   /* border-related properties */
+  //   // border: 20px solid black;  
    
     
-  }
-  .border3 {
-    padding: 20px;
-    margin: 10px auto;
-    line-height: 3;
-    /*background-color: #f66;*/
-    /*background-clip: padding-box;*/
-    /* use instead : */
-    background:linear-gradient(rgb(107, 19, 189),rgb(65, 65, 68)) no-repeat center center;
-    background-size: calc(100% + 20px)  calc(100% + 20px);
-    text-align: center;
-    /* border-related properties */
-    // border: 20px solid black;  
+  // }
+  // .border4 {
+  //   padding: 20px;
+  //   margin: 10px auto;
+  //   line-height: 3;
+  //   /*background-color: #f66;*/
+  //   /*background-clip: padding-box;*/
+  //   /* use instead : */
+  //   background:linear-gradient(rgb(119, 7, 7),rgb(0, 0, 0)) no-repeat center center;
+  //   background-size: calc(100% + 20px)  calc(100% + 20px);
+  //   text-align: center;
+  //   /* border-related properties */
+  //   // border: 20px solid black;  
    
     
-  }
-  .border4 {
-    padding: 20px;
-    margin: 10px auto;
-    line-height: 3;
-    /*background-color: #f66;*/
-    /*background-clip: padding-box;*/
-    /* use instead : */
-    background:linear-gradient(rgb(119, 7, 7),rgb(0, 0, 0)) no-repeat center center;
-    background-size: calc(100% + 20px)  calc(100% + 20px);
-    text-align: center;
-    /* border-related properties */
-    // border: 20px solid black;  
+  // }
+  // .border5 {
+  //   padding: 20px;
+  //   margin: 10px auto;
+  //   line-height: 3;
+  //   /*background-color: #f66;*/
+  //   /*background-clip: padding-box;*/
+  //   /* use instead : */
+  //   background:linear-gradient(rgb(255, 38, 0),rgb(255, 255, 255)) no-repeat center center;
+  //   background-size: calc(100% + 20px)  calc(100% + 20px);
+  //   text-align: center;
+  //   /* border-related properties */
+  //   // border: 20px solid black;  
    
     
-  }
-  .border5 {
-    padding: 20px;
-    margin: 10px auto;
-    line-height: 3;
-    /*background-color: #f66;*/
-    /*background-clip: padding-box;*/
-    /* use instead : */
-    background:linear-gradient(rgb(255, 38, 0),rgb(255, 255, 255)) no-repeat center center;
-    background-size: calc(100% + 20px)  calc(100% + 20px);
-    text-align: center;
-    /* border-related properties */
-    // border: 20px solid black;  
+  // }
+  // .border6 {
+  //   padding: 20px;
+  //   margin: 10px auto;
+  //   line-height: 3;
+  //   /*background-color: #f66;*/
+  //   /*background-clip: padding-box;*/
+  //   /* use instead : */
+  //   background:linear-gradient(rgb(243, 18, 149),rgb(255, 255, 255)) no-repeat center center;
+  //   background-size: calc(100% + 20px)  calc(100% + 20px);
+  //   text-align: center;
+  //   /* border-related properties */
+  //   // border: 20px solid black;  
    
     
-  }
-  .border6 {
-    padding: 20px;
-    margin: 10px auto;
-    line-height: 3;
-    /*background-color: #f66;*/
-    /*background-clip: padding-box;*/
-    /* use instead : */
-    background:linear-gradient(rgb(243, 18, 149),rgb(255, 255, 255)) no-repeat center center;
-    background-size: calc(100% + 20px)  calc(100% + 20px);
-    text-align: center;
-    /* border-related properties */
-    // border: 20px solid black;  
+  // }
+  // .border7 {
+  //   padding: 20px;
+  //   margin: 10px auto;
+  //   line-height: 3;
+  //   /*background-color: #f66;*/
+  //   /*background-clip: padding-box;*/
+  //   /* use instead : */
+  //   background:linear-gradient(rgb(251, 255, 0),rgb(20, 192, 4)) no-repeat center center;
+  //   background-size: calc(100% + 20px)  calc(100% + 20px);
+  //   text-align: center;
+  //   /* border-related properties */
+  //   // border: 20px solid black;  
    
     
-  }
-  .border7 {
-    padding: 20px;
-    margin: 10px auto;
-    line-height: 3;
-    /*background-color: #f66;*/
-    /*background-clip: padding-box;*/
-    /* use instead : */
-    background:linear-gradient(rgb(251, 255, 0),rgb(20, 192, 4)) no-repeat center center;
-    background-size: calc(100% + 20px)  calc(100% + 20px);
-    text-align: center;
-    /* border-related properties */
-    // border: 20px solid black;  
-   
-    
-  }
+  // }
   .width10{
     width: 1000px;
   }
@@ -174,25 +161,80 @@
     width: 300px;
 
   }
-  .border {
-    padding: 20px;
-    margin: 10px auto;
-    line-height: 3;
-    /*background-color: #f66;*/
-    /*background-clip: padding-box;*/
-    /* use instead : */
-    background:linear-gradient(rgb(170, 170, 165),rgb(65, 94, 62)) no-repeat center center;
-    background-size: calc(100% + 20px)  calc(100% + 20px);
-    text-align: center;
-    /* border-related properties */
-    // border: 20px solid black;  
-   
-    
-  }
   
 
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+
+
+  .style1 {
+    width:600px;
+    overflow: hidden;
+ background-image: url("https://image.freepik.com/free-vector/beautiful-wedding-card-with-watercolor-background_1361-1126.jpg");
+  }
+  
+  // .style2 {
+    
+  //   width: 800px;
+  //   background-image: url(https://www.finnlog-blockhaus.de/wp-content/uploads/2019/04/Moderne-Holzvillen-Draco-Blockhaus-mit-Terrasse-und-Garten-1.jpg)
+    
+  // }
+  /////// menu restou
+  .style3 {
+    width:280px;
+    overflow: hidden;
+ background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsFmdVdkfB_sCoEVQcAHOdyMn1rrE_AZ1kYQ&usqp=CAU");
+  }
+  .style4 {
+    width: 800px;
+    overflow: hidden;
+    background-image: url("https://github.com/Afarah92/the-rosa-restuarant/blob/master/the%20rosa%20wesite/img/hero.jpg?raw=true");
+  }
+  .style5 {
+    width: 600px;
+    overflow: hidden;
+    background-image:url("http://food.fnr.sndimg.com/content/dam/images/food/fullset/2016/7/22/2/FNM090116_Grilled-Surf-and-Turf_s4x3.jpg.rend.hgtvcom.616.462.suffix/1469254934512.jpeg");
+  }
+  
+  ////////Cartevisite
+  .style8 {
+    width:800px;
+    height:400px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    border:5px solid black;
+    border-radius:5%;
+    background-image:url(https://www.finnlog-blockhaus.de/wp-content/uploads/2019/04/Moderne-Holzvillen-Draco-Blockhaus-mit-Terrasse-und-Garten-1.jpg);;
+  };
+  .style9 {
+    width:800px;
+    height:400px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    border:5px solid black;
+    border-radius:5%;
+    background-image:url("https://etic-informatique.fr/wp-content/uploads/etic-informatique-reparation40.jpg");;
+  };
+
+  .style10 {
+    width:800px;
+    height:400px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    border:5px solid blanchedalmond;
+    border-radius:5%;
+    background-image:url("https://miro.medium.com/max/1200/1*4BIGTY604aR0LT0h1DcQEw.png");
+    
+  
+  };
+
+
+
+
+
+// /* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';
 
 
 

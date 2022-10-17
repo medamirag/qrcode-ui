@@ -160,6 +160,7 @@ export class AddFormComponent implements OnInit {
     if (template==='AlzheimerPatient'){
 this.form.title = template;
 this.form.category=template;
+this.form.style='style2'
 this.form.items=[
 {identifier:this.getIdentifier("TextInput"),label:"Patient's Name",type:'TextInput',value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Brother's Name",type:'TextInput',value:""},
@@ -176,21 +177,58 @@ this.hasMap = true
       this.form.title = template;
       this.form.private = false;
       this.form.category=template;
+      this.form.style='style9';
       this.form.items=[{identifier:this.getIdentifier("EmailInput"),label:"Email",type:"EmailInput",value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Name",type:'TextInput',value:""},
 {identifier:this.getIdentifier("PhoneInput"),label:"Personal Phone",type:'PhoneInput',value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Company's Name",type:'TextInput',value:""},
 {identifier:this.getIdentifier("PhoneInput"),label:"Company's Phone",type:'PhoneInput',value:""},
-{identifier:this.getIdentifier("AddressInput"),label:"Company's Address",type:'AddressInput',value:""},
+
 
 ]
-this.hasMap = true
+
 
     }
     else if (template==='restaurantMenu'){
       this.form.title = template;
       this.form.private = false;
       this.form.category=template;
+      this.form.style='style5'
+      this.form.items=[
+        {identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
+
+{identifier:this.getIdentifier("Title"),label:"Name",type:'Title',value:"Menu Principal"},
+{identifier:1,label:"",type:'Divider',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Spaguetti",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Lasagne",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Grillade Mixte",type:'TextInput',value:""},
+
+{identifier:2,label:"",type:'Divider',value:""},
+
+{identifier:this.getIdentifier("Title"),label:"Name",type:'Title',value:"Entrée"},
+{identifier:3,label:"",type:'Divider',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Salade césar",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Soupe",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Plat Tunisien",type:'TextInput',value:""},
+
+{identifier:4,label:"",type:'Divider',value:""},
+
+{identifier:this.getIdentifier("Title"),label:"Name",type:'Title',value:"Desser"},
+{identifier:5,label:"",type:'Divider',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Tiramisso",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Boison",type:'TextInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Salade de fruit",type:'TextInput',value:""},
+
+    
+      ]
+    
+    }
+    
+    else if (template==='carte mariage'){
+      this.form.title = template;
+      this.form.private = false;
+      this.form.category=template;
+      this.form.style='style1'
       this.form.items=[
         {identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
 
@@ -221,6 +259,12 @@ this.hasMap = true
     
     }
   }
+
+
+
+
+
+
   ngOnInit(): void {
 
   }
@@ -230,6 +274,8 @@ this.activeUrl=environment.baseUrl+"/visitor/"+this.router.snapshot.params['id']
   }
   selectClass(style:string){
     this.form.style=style;
+    console.log(style);
+    
     
   }
   selectBorder(border:string){

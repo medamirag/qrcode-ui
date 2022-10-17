@@ -1,84 +1,86 @@
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 180px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color:black; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: orange;
+    display: block;
+  }
 
-.fa-2x {
-    font-size: 2em;
-    }
-    .fa2 {
-    position: relative;
-    width: 60px;
-    height: 36px;
-    text-align: center;
-    vertical-align: middle;
-    font-size:40px;
-    }
-    .container { position: relative; }
-.del { display: block; }
-.inp { position: absolute; bottom:0; left:0; }
+// .fa-2x {
+//     font-size: 2em;
+//     }
+//     .fa2 {
+//     position: relative;
+//     width: 60px;
+//     height: 36px;
+//     text-align: center;
+//     vertical-align: middle;
+//     font-size:40px;
+//     background: transparent;
+//     }
+//     .container { position: relative; }
+// .del { display: block; }
+// .inp { position: absolute; bottom:0; left:0; }
 
 
     
     
 
-    .fa-2x {
-        font-size: 2em;
-        }
-        .fa2 {
-        position: relative;
-        width: 60px;
-        height: 36px;
-        text-align: center;
-        vertical-align: middle;
-        font-size:40px;
-        }
+    // .fa-2x {
+    //     font-size: 2em;
+    //     }
+    //     .fa2 {
+    //     position: relative;
+    //     width: 60px;
+    //     height: 36px;
+    //     text-align: center;
+    //     vertical-align: middle;
+    //     font-size:40px;
+    //     background: transparent;
+    //     }
         
-        .sidenav {
-            height: 100%; /* Full-height: remove this if you want "auto" height */
-            width: 180px; /* Set the width of the sidebar */
-            position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-            z-index: 1; /* Stay on top */
-            top: 0; /* Stay at the top */
-            left: 0;
-            background-color:black; /* Black */
-            overflow-x: hidden; /* Disable horizontal scroll */
-            padding-top: 20px;
-          }
           
-          /* The navigation menu links */
-          .sidenav a {
-            padding: 6px 8px 6px 16px;
-            text-decoration: none;
-            font-size: 25px;
-            color: orange;
-            display: block;
-          }
-          
-          /* When you mouse over the navigation links, change their color */
-          .sidenav a:hover {
-            color: #f1f1f1;
-          }
+          // /* When you mouse over the navigation links, change their color */
+          // .sidenav a:hover {
+          //   color: #f1f1f1;
+          // }
           
           /* Style page content */
-          .main {
-            margin-left: 160px; /* Same as the width of the sidebar */
-            padding: 0px 10px;
-          }
+          // .main {
+          //   margin-left: 160px; /* Same as the width of the sidebar */
+          //   padding: 0px 10px;
+          // }
           
           /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-          @media screen and (max-height: 450px) {
-            .sidenav {padding-top: 15px;}
-            .sidenav a {font-size: 18px;}
-          }
+          // @media screen and (max-height: 450px) {
+          //   .sidenav {padding-top: 15px;}
+          //   .sidenav a {font-size: 18px;}
+          // }
     
-          .iconsform{
-            color:blue;
-            width: 30px;
-            height: 20px;
-          }
-          .disabled{
-            color: gray;
-          }
-          .disabled:hover{
-            color:gray;
-          }
+          // .iconsform{
+          //   color:blue;
+          //   width: 30px;
+          //   height: 20px;
+          // }
+          // .disabled{
+          //   color: gray;
+          // }
+          // .disabled:hover{
+          //   color:gray;
+          // }
         
     ///// divider
           // hr {

@@ -26,6 +26,9 @@
           <li class="nav-item">
             <a style="color: black;" class="nav-link" (click)="addTemplate('restaurantMenu')">Menu Restaurant</a>
           </li>
+          <li class="nav-item">
+            <a style="color: black;" class="nav-link" (click)="addTemplate('carte mariage')">carte mariage</a>
+          </li>
           
         </ul>
        
@@ -110,7 +113,7 @@
 
                 <div [ngClass]="hasMap?'disabled':'activated'">
                     Address
-                    <i  class="fa fa2 far fa-map"></i> <span class="nav-text">                 </span>
+                    <i  class="fa fa2 far fa-map"></i> <span class="nav-text"> </span>
 
                 </div>
             </a>
@@ -119,6 +122,7 @@
 
 
     </ul>
+
     <h1 style="color: white;text-align: center;">Size</h1>
     <ul>
         <li *ngFor="let width of widths;let i=index" style="padding: 5px;display:inline-block ">
@@ -139,7 +143,7 @@
         </li>
     </ul>
    
-    <h1 style="color: white;text-align: center;">Styles</h1>
+    <h1 style="color: white;text-align: center; ">Styles</h1>
 
 <ul>
     <li *ngFor="let style of styles" style="padding: 10px;display:inline-block ">
@@ -155,23 +159,24 @@
 <!-- Form -->
 <div class="main d-flex justify-content-center" >
 <!-- <div [ngClass]="this.form.style,this.form.border,this.form.width"> -->
-    <div [ngClass]="this.form.width">
+    <!-- <div [ngClass]="this.form.width"> -->
+    <!-- <div [ngClass]="this.form.border"> -->
 
-    <div [ngClass]="this.form.border">
+
+
         <div [ngClass]="this.form.style">
-            <div style="font-weight: 500;">isPrivate?</div> 
+           
+            <!-- <div style="font-weight: 500;">isPrivate?</div>  -->
 
                 <input [(ngModel)]="form.private" type="checkbox" >
 
              
-        
-        
-    <div style="font-weight: 500;">Title</div> 
-
-
+    <!-- <div style="font-weight: 500;">Title</div>  -->
     <input [(ngModel)]="form.title" type="text" class="form-control" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1">
 
-    <div style="font-weight: 500;">Category</div> 
+
+
+    <!-- <div style="font-weight: 500;">Category</div>  -->
 
     <select [(ngModel)]="form.category" type="text" class="form-control" placeholder="Category" aria-label="Username" aria-describedby="basic-addon1">
    <option *ngFor="let category of categories" [ngValue]="category" [selected]="category===form.category" >{{category}}</option>
@@ -249,8 +254,8 @@
 
 
 </div>
-</div>
-</div>
+<!-- </div> -->
+<!-- </div> -->
 </div>
 <ng-template #qrCode let-close="close">
     <div class="modal-header">
