@@ -12,7 +12,7 @@ styles:Style[]=[
   {class:"style4",title:"Style 4"},
   {class:"style5",title:"Style 5"},
   {class:"style6",title:"Style 6"},
-  {class:"style7",title:"Style 7"},
+  // {class:"style7",title:"Style 7"},
   {class:"style8",title:"Style 8"},
   {class:"style9",title:"Style 9"},
   {class:"style10",title:"Style 10"},

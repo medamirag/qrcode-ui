@@ -164,67 +164,81 @@
   
 
 
-
+///// carte mariage
   .style1 {
-    width:600px;
+    width:500px;
+    display:grid;
     overflow: hidden;
- background-image: url("https://image.freepik.com/free-vector/beautiful-wedding-card-with-watercolor-background_1361-1126.jpg");
+ background-image: url("https://freedesignfile.com/upload/2014/04/Creative-scroll-paper-background-vector-set-14.jpg");
   }
   
-  // .style2 {
+  .style2 {
     
-  //   width: 800px;
-  //   background-image: url(https://www.finnlog-blockhaus.de/wp-content/uploads/2019/04/Moderne-Holzvillen-Draco-Blockhaus-mit-Terrasse-und-Garten-1.jpg)
+    width: 500px;
+    display:grid;
+    overflow: hidden;
+    background-image:url('https://media.istockphoto.com/vectors/retro-delicate-wedding-card-with-pink-watercolor-texture-and-flowers-vector-id1294181713?k=20&m=1294181713&s=612x612&w=0&h=DDI5NgivZ3IfStpbiXqiPpkII92KlGnEG8-FSUry3aY=')
     
-  // }
+  }
   /////// menu restou
   .style3 {
     width:280px;
+    display:grid;
     overflow: hidden;
  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsFmdVdkfB_sCoEVQcAHOdyMn1rrE_AZ1kYQ&usqp=CAU");
   }
   .style4 {
-    width: 800px;
+    width: 400px;
+    display:grid;
     overflow: hidden;
     background-image: url("https://github.com/Afarah92/the-rosa-restuarant/blob/master/the%20rosa%20wesite/img/hero.jpg?raw=true");
   }
   .style5 {
     width: 600px;
+    display:grid;
     overflow: hidden;
     background-image:url("http://food.fnr.sndimg.com/content/dam/images/food/fullset/2016/7/22/2/FNM090116_Grilled-Surf-and-Turf_s4x3.jpg.rend.hgtvcom.616.462.suffix/1469254934512.jpeg");
+  }
+  ///////patient az
+  .style6 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
   }
   
   ////////Cartevisite
   .style8 {
     width:800px;
-    height:400px;
+    height:450px;
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    border:5px solid black;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: 1fr 1fr 1fr;
+    // border:5px solid black;
     border-radius:5%;
     background-image:url(https://www.finnlog-blockhaus.de/wp-content/uploads/2019/04/Moderne-Holzvillen-Draco-Blockhaus-mit-Terrasse-und-Garten-1.jpg);;
   };
   .style9 {
     width:800px;
-    height:400px;
+    height:450px;
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    border:5px solid black;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: 1fr 1fr 1fr;
+    // border:5px solid black;
     border-radius:5%;
-    background-image:url("https://etic-informatique.fr/wp-content/uploads/etic-informatique-reparation40.jpg");;
+    background-image:url(https://etic-informatique.fr/wp-content/uploads/etic-informatique-reparation40.jpg);;
   };
 
   .style10 {
     width:800px;
-    height:400px;
+    height :450px;
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    border:5px solid blanchedalmond;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: 1fr 1fr 1fr;
+    // border:5px solid blanchedalmond;
     border-radius:5%;
-    background-image:url("https://miro.medium.com/max/1200/1*4BIGTY604aR0LT0h1DcQEw.png");
+    background-image:url(https://miro.medium.com/max/1200/1*4BIGTY604aR0LT0h1DcQEw.png);
     
   
   };

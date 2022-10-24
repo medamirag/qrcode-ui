@@ -27,7 +27,8 @@ export class AddFormComponent implements OnInit {
 
   categories:String[]=['Carte Visite',
     'Patient Alzheimer',
-    'Menu Restaurant']
+    'Menu Restaurant',
+    'carte mariage']
   constructor(private route: Router ,private router:ActivatedRoute,private modal: NgbModal,private formService:FormService,private styleService : StylesService)
      {
 
@@ -105,7 +106,7 @@ export class AddFormComponent implements OnInit {
 
     
     let input = prompt("Please enter the input label", "Write here");
-    let text;
+   
     if (input == null || input == "") {
     } else {
   
@@ -160,7 +161,7 @@ export class AddFormComponent implements OnInit {
     if (template==='AlzheimerPatient'){
 this.form.title = template;
 this.form.category=template;
-this.form.style='style2'
+this.form.style='style6'
 this.form.items=[
 {identifier:this.getIdentifier("TextInput"),label:"Patient's Name",type:'TextInput',value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Brother's Name",type:'TextInput',value:""},
@@ -169,7 +170,8 @@ this.form.items=[
 {identifier:this.getIdentifier("PhoneInput"),label:"Wife's Phone",type:'PhoneInput',value:""},
 {identifier:this.getIdentifier("PhoneInput"),label:"Brother's Phone",type:'PhoneInput',value:""},
 {identifier:this.getIdentifier("PhoneInput"),label:"Son's Phone",type:'PhoneInput',value:""},
-{identifier:this.getIdentifier("AddressInput"),label:"Patient's Address",type:'AddressInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:"Patient's Address",type:'TextInput',value:""},
+// {identifier:this.getIdentifier("AddressInput"),label:"Patient's Address",type:'AddressInput',value:""},
 ]
 this.hasMap = true
 }
@@ -177,12 +179,13 @@ this.hasMap = true
       this.form.title = template;
       this.form.private = false;
       this.form.category=template;
-      this.form.style='style9';
-      this.form.items=[{identifier:this.getIdentifier("EmailInput"),label:"Email",type:"EmailInput",value:""},
+      this.form.style='style10';
+      this.form.items=[
+        {identifier:this.getIdentifier("EmailInput"),label:"Email",type:"EmailInput",value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Name",type:'TextInput',value:""},
 {identifier:this.getIdentifier("PhoneInput"),label:"Personal Phone",type:'PhoneInput',value:""},
 {identifier:this.getIdentifier("TextInput"),label:"Company's Name",type:'TextInput',value:""},
-{identifier:this.getIdentifier("PhoneInput"),label:"Company's Phone",type:'PhoneInput',value:""},
+{identifier:this.getIdentifier("TextInput"),label:" Address",type:'TextInput',value:""},
 
 
 ]
@@ -228,31 +231,30 @@ this.hasMap = true
       this.form.title = template;
       this.form.private = false;
       this.form.category=template;
-      this.form.style='style1'
+      this.form.style='style2'
       this.form.items=[
         {identifier:this.getIdentifier("Divider"),label:"",type:'Divider',value:""},
 
-{identifier:this.getIdentifier("Title"),label:"Name",type:'Title',value:"Menu Principal"},
-{identifier:1,label:"",type:'Divider',value:""},
-{identifier:this.getIdentifier("TextInput"),label:"Spaguetti",type:'TextInput',value:""},
-{identifier:this.getIdentifier("TextInput"),label:"Lasagne",type:'TextInput',value:""},
-{identifier:this.getIdentifier("TextInput"),label:"Grillade Mixte",type:'TextInput',value:""},
+{identifier:this.getIdentifier("Title"),label:"Name",type:'Title',value:"   بسم الله الرحمن الرحيم  "},
 
-{identifier:2,label:"",type:'Divider',value:""},
+{identifier:this.getIdentifier("Title"),label:"Name ",type:'Title',value:" :تتشرف عائلة "},
 
-{identifier:this.getIdentifier("Title"),label:"Name",type:'Title',value:"Entrée"},
-{identifier:3,label:"",type:'Divider',value:""},
-{identifier:this.getIdentifier("TextInput"),label:"Salade césar",type:'TextInput',value:""},
-{identifier:this.getIdentifier("TextInput"),label:"Soupe",type:'TextInput',value:""},
-{identifier:this.getIdentifier("TextInput"),label:"Plat Tunisien",type:'TextInput',value:""},
+{identifier:this.getIdentifier("Title"),label:" اسم اهل العريس و اسم  اهل العروسه",type:'Title',value:""},
 
-{identifier:4,label:"",type:'Divider',value:""},
+{identifier:this.getIdentifier("Title"),label:"Name",type:'Title',value:"  بدعوتكم لحضور"},
 
-{identifier:this.getIdentifier("Title"),label:"Name",type:'Title',value:"Desser"},
-{identifier:5,label:"",type:'Divider',value:""},
-{identifier:this.getIdentifier("TextInput"),label:"Tiramisso",type:'TextInput',value:""},
-{identifier:this.getIdentifier("TextInput"),label:"Boison",type:'TextInput',value:""},
-{identifier:this.getIdentifier("TextInput"),label:"Salade de fruit",type:'TextInput',value:""},
+{identifier:this.getIdentifier("Title"),label:"Name",type:'Title',value:"    حفل عقد قران وزفاف  "},
+
+{identifier:this.getIdentifier("Title"),label:" اسم العريس والعروسه",type:'Title',value:""},
+
+{identifier:this.getIdentifier("Title"),label:"Name ",type:'Title',value:"وذلك في يوم "},
+
+{identifier:this.getIdentifier("Title"),label:"Name ",type:'Title',value:" في  "},
+
+{identifier:this.getIdentifier("Title"),label:"Name ",type:'Title',value:" مع تمنياتنا للجميع بالخير والسعادة الدائمة"},
+
+
+
 
     
       ]
