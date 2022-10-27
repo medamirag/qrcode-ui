@@ -6,8 +6,10 @@ import { Style } from './style';
 })
 export class StylesService {
 styles:Style[]=[
+  {class:"style1-0 ",title:"Style1-0"},
   {class:"style1 ",title:"Style 1"},
   {class:"style2",title:"Style 2"},
+  
   {class:"style3",title:"Style 3"},
   {class:"style4",title:"Style 4"},
   {class:"style5",title:"Style 5"},

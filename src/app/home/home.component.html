@@ -1,4 +1,4 @@
-<nav  *ngIf="logged" class="navbar navbar-expand-lg " style="background-color: orange;cursor: pointer;">
+<nav  *ngIf="logged" class="navbar navbar-expand-lg " style="background-color: whitesmoke;cursor: pointer;">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -17,6 +17,9 @@
     </div>
   </div>
 </nav>
+
+
+
 <div class="form-inline my-2 my-lg-0">
     <input [(ngModel)]="searchWord"  (input)="search()" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="text-align: center; height:60px ;font-weight: 500; color: black;">
 </div>
@@ -24,7 +27,7 @@
 
 <div class="col-sm-3" *ngFor="let form of forms">
   
-    <div class="card" style=" width: 18rem;height: 10rem;">
+    <div class="card" style=" width: 18rem;height: 10rem; color: rgb(63, 173, 19);">
         <div class="card-body " ngClass="{{form.style}}" >
           <h5 class="card-title">{{form.category}}</h5>
           <p class="card-text">{{form.title}}</p>

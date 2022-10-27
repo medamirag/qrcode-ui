@@ -29,6 +29,7 @@ export class AddFormComponent implements OnInit {
     'Patient Alzheimer',
     'Menu Restaurant',
     'carte mariage']
+item: any;
   constructor(private route: Router ,private router:ActivatedRoute,private modal: NgbModal,private formService:FormService,private styleService : StylesService)
      {
 
@@ -293,6 +294,7 @@ this.activeUrl=environment.baseUrl+"/visitor/"+this.router.snapshot.params['id']
   saveOrUpdate(){
     this.formService.saveOrUpdate(this.form).subscribe(data=>{console.log(data);
       this.route.navigate(['/editor']);
+      
     } 
        )
   }

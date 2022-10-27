@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { QRCodeModule } from 'angularx-qrcode';
 import { RouterModule } from '@angular/router';
 import { FormListComponent } from './form-list/form-list.component';
+import { URLComponent } from './url/url.component';
 
 
 @NgModule({
   declarations: [
     AddFormComponent,
     FormListComponent,
+    URLComponent,
   ],
   imports: [
     CommonModule,

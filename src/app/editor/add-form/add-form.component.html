@@ -1,18 +1,19 @@
 <!-- navbar -->
-<nav class="navbar navbar-expand-lg" style="background-color: orange;">
+
+<nav class="navbar navbar-expand-lg" style="background-color:whitesmoke">
     <div class="container-fluid ">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-        <ul style="font-weight: 700; cursor: pointer; text-align: left; padding:0px 170px;" class="navbar-nav  mb-2 mb-lg-0"   >
+        <ul style="font-weight: 700; cursor: pointer; text-align: left; padding:0px 200px;" class="navbar-nav  mb-2 mb-lg-0"   >
             <li class="nav-item">
                 <a style="color: black" class="nav-link active" routerLink="/editor">Cancel </a>
             </li>
 
             <li class="nav-item">
-                <a style="color: black" class="nav-link active buttonStyle"   (click)="saveOrUpdate()"> Save</a>
+                <a  style="color: black" class="nav-link active buttonStyle"   (click)="saveOrUpdate()"> Save</a>
             </li>
         </ul>
                
@@ -29,6 +30,8 @@
           <li class="nav-item">
             <a style="color: black;" class="nav-link" (click)="addTemplate('carte mariage')">carte mariage</a>
           </li>
+    
+         
           
         </ul>
        
@@ -47,12 +50,15 @@
 
 
 <!-- SideBar -->
+
 <div class="sidenav " >
     <div class="d-flex justify-content-center">
        
         <td></td>
     
     </div>
+    <br>
+    
     <ul class="">
        <!-- <li>
         <button class="btn btn-warning justify-content-sm-center btn-lg" routerLink="/editor">Cancel</button>
@@ -62,9 +68,10 @@
 
         <li>
             <a (click)="add('Divider')">
-                <i class="fa fa2 fa-solid fa-bars"></i>
+                <img style="width:1em; height: 1em; "   src="assets/img/gap.png " alt="">
+                <!-- <i class="fa fa2 fa-solid fa-bars"></i> -->
 
-                <span class="nav-text">
+                <span class="nav-text "  style="font-size: 20px;">
                     Divider
                 </span>
             </a>
@@ -72,9 +79,10 @@
         </li>
         <li>
             <a (click)="add('Title')">
-                <i class="fa fa2 fa-solid fa-paragraph"></i>
+                <img style="width:1em; height: 1em; "   src="assets/img/title.png " alt="">
+                <!-- <i class="fa fa2 fa-solid fa-paragraph"></i> -->
 
-                <span class="nav-text">
+                <span class="nav-text" style="font-size: 20px;">
                     Title
                 </span>
             </a>
@@ -82,48 +90,54 @@
         </li>
         <li>
             <a (click)="add('TextInput')">
-                <i class="fa fa2 fa-solid fa-font"></i>
+                <img style="width:1em; height: 1em; "   src="assets/img/modifier-le-fichier.png " alt=""> 
+                <!-- <i class="fa fa2 fa-solid fa-font"></i> -->
 
-                <span class="nav-text">
+                <span class="nav-text" style="font-size: 20px; ">
                     Text
                 </span>
             </a>
 
         </li>
         <li>
-            <a (click)="add('EmailInput')">
-                <i class="fa fa2 fa-solid fa-at"></i>
-                <span class="nav-text">
-                    Email
-                </span>
+            <a  (click)="add('EmailInput')">
+        
+             
+                    <img style="width:1em; height: 1em; "   src="assets/img/e-mail.png " alt=""> 
+                    <span class="nav-text " style="font-size: 20px;">
+                       Email
+                    </span>
             </a>
 
         </li>
         <li>
             <a (click)="add('PhoneInput')">
-                <i class="fa fa2 fa-solid fa-phone"></i> <span class="nav-text">
+                <img style="width:1em; height: 1em; "   src="assets/img/telephoner.png " alt=""> 
+                <!-- <i class="fa fa2 fa-solid fa-phone">
+                </i>  -->
+                <span class="nav-text" style="font-size: 20px;">
                     Phone
                 </span>
             </a>
 
         </li>
 
-        <li >
+        <!-- <li >
             <a  (click)="add('AddressInput')">
 
                 <div [ngClass]="hasMap?'disabled':'activated'">
-                    Address
+                    
                     <i  class="fa fa2 far fa-map"></i> <span class="nav-text"> </span>
-
+                    Address
                 </div>
             </a>
 
-        </li>
+        </li> -->
 
 
     </ul>
 
-    <h1 style="color: white;text-align: center;">Size</h1>
+    <!-- <h1 style="color: white;text-align: center;">Size</h1>
     <ul>
         <li *ngFor="let width of widths;let i=index" style="padding: 5px;display:inline-block ">
             <div (click)="selectwidth(width)"
@@ -132,8 +146,8 @@
             </div>
             <br>
         </li>
-    </ul>
-    <h1 style="color: white;text-align: center;">Borders</h1>
+    </ul> -->
+    <!-- <h1 style="color: white;text-align: center;">Borders</h1>
     <ul>
         <li *ngFor="let border of borders" style="padding: 0px;display:inline-block ">
             <div (click)="selectBorder(border)" [ngClass]="border"
@@ -141,9 +155,13 @@
             </div>
             <br>
         </li>
-    </ul>
-   
-    <h1 style="color: white;text-align: center; ">Styles</h1>
+    </ul> -->
+<br>
+<br>
+
+    <h1 style="color: black;text-align: center; font-size: 20px;">
+   <img style="width:1.5em; height: 1.5em; "   src="assets/img/background.png" alt="">
+    Styles</h1>
 
 <ul>
     <li *ngFor="let style of styles" style="padding: 10px;display:inline-block ">
@@ -157,6 +175,7 @@
 </div>
 
 <!-- Form -->
+
 <div class="main d-flex justify-content-center" >
 <!-- <div [ngClass]="this.form.style,this.form.border,this.form.width"> -->
     <!-- <div [ngClass]="this.form.width"> -->
@@ -166,7 +185,7 @@
 
         <div [ngClass]="this.form.style">
            
-            <!-- <div style="font-weight: 500;">isPrivate?</div>  -->
+            <div style="font-weight: 500; color: blue; text-align: center">isPrivate?</div> 
 
                 <input [(ngModel)]="form.private" type="checkbox" >
 

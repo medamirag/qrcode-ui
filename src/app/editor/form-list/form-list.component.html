@@ -1,7 +1,7 @@
 
 <!-- ////////////////////////////// issam ////////////////////////////// -->
 <!-- navbar -->
-<nav class="navbar navbar-expand-lg " style="background-color: orange;cursor: pointer;">
+<nav class="navbar navbar-expand-lg " style="background-color: whitesmoke;cursor: pointer;">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,6 +37,7 @@
         <th scope="col">Name</th>
         <th  scope="col">Category</th>
         <th scope="col">QRCode</th>
+        <th scope="col">Visitor</th>
         <th scope="col">actions</th>
       </tr>
     </thead>
@@ -49,11 +50,20 @@
             {{form.title}}
         </td>
         <td>{{form.category}}</td>
+       
         <td> <i  (click)="getQrCode(form.id)" class="fa fa2 fa-solid fa-qrcode fa-3x d-flex justify-content-center"></i> </td>
+       
+        <td> <i  routerLink="/visitor/{{form.id}}" class="fa fa2 fa-solid fa-qrcode fa-3x d-flex justify-content-center"></i> </td>
       
         <td>     
              
-           <i  style="color: black;" routerLink="/editor/forms/{{form.id}}" class="fa far fa-edit fa-2x"></i>   <i (click)="deleteByFormID(form.id)" style="color:black" class="fa fas fa-minus-circle fa-2x"></i> </td>
+           <i   routerLink="/editor/forms/{{form.id}}" >
+            <img style="width:2.5em; height: 2.5em; "   src="assets/img/edit.png " alt="">
+           </i>  
+            <i (click)="deleteByFormID(form.id)" >
+              <img style="width:2.5em; height: 2.5em; "   src="assets/img/delete.png " alt="">
+            </i> 
+          </td>
         
         
         </tr>
@@ -66,9 +76,9 @@
 </div>
   </div>
   <ng-template #qrCode let-close="close">
-    <div class="modal-header">
+    <!-- <div class="modal-header">
         {{activeUrl}}
-    </div>
+    </div> -->
     <div class="modal-body">
         <qrcode (qrCodeURL)="loadQrCode($event)"  [qrdata]="activeUrl" [width]="400" [errorCorrectionLevel]="'M'"></qrcode>
     </div>

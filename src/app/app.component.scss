@@ -1,6 +1,6 @@
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: rgb(0, 0, 0);
+    background-color:gray;
     overflow: hidden;
 }
 
@@ -9,11 +9,11 @@
   float: left;
   color: white;
   font-weight: 600;
-  background-color: black;
+  background-color: gray;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  border: 10px solid black;
+  // border: 10px solid black;
   cursor: pointer;
 
   font-size: 17px;
@@ -21,17 +21,17 @@
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: black;
-  color: orange;
+  // background-color:gray;
+  color: black;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: black;
-  color: orange;
+  background-color: gray;
+  color: black;
 }
 .topnav a.active:hover{
-  background-color: black;
+  // background-color: black;
   color: white;
 }
 

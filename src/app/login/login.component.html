@@ -1,18 +1,88 @@
-<div class="login">
+<!-- <div class="login">
     <h1 *ngIf="msg" style="color: red;">{{message}}</h1>
-
-	<h1 *ngIf="sup===false">Login</h1>
+    <h1 *ngIf="sup===false">Login</h1>
 	<h1 *ngIf="sup===true">SignUp</h1>
+
     	<input  [(ngModel)]="username" type="text" name="u" placeholder="Username" required="required" />
-        <input [(ngModel)]="password" type="password" name="p" placeholder="Password" required="required" />
-        <div *ngIf="sup===false">
+      <input [(ngModel)]="password" type="password" name="p" placeholder="Password" required="required" />
+        
+      <div *ngIf="sup===false">
         <button style="color:orange;width: 300px;font-weight: 600;" (click)="login()" type="submit" class="btn btn-outline-dark">Sign in.</button>
     </div>
         <div *ngIf="sup===true">
         <button style="color:orange;width: 300px;font-weight: 600;" (click)="Subscribe()" type="submit" class="btn btn-outline-dark">Subscribe.</button>
     </div>
+
     <div *ngIf="sup===false">
 
         <button style="color:orange;width: 300px;font-weight: 600;"(click)="signup()" type="submit" class="btn btn-outline-dark">Sign up.</button>
  </div>
+</div> -->
+
+<div class="body">
+  <h1 style="font-size: 40px;  padding:0px 700px">Qr-code</h1>
+  <img style="width:10em; height: 10em; left: 700px " class="position-relative" src="assets/img/qr-code.png" alt="">
+
+  <div class="container">
+    <div class="screen">
+    
+      <div class="screen__content">
+        
+        <div class="login">
+        <h1 *ngIf="msg" style="color: red; font-size: 20px;" >{{message}}</h1>
+    <h1 *ngIf="sup===false">Login</h1>
+	<h1 *ngIf="sup===true">SignUp</h1>
+        
+				<div class="login__field">
+					<input  [(ngModel)]="username" type="text" class="login__input" placeholder="User name / Email">
+				</div>
+
+				<div class="login__field">
+					<input [(ngModel)]="password" type="password" class="login__input" placeholder="Password">
+				</div>
+
+
+        <div *ngIf="sup===false">
+				<button (click)="login()" type="submit" class="button login__submit">
+          Sign in.
+				</button>		
+      </div>
+      
+        <div *ngIf="sup===true">
+				<button (click)="login()" type="submit" class="button login__submit">
+          Subscribe.
+				</button>		
+      </div>
+      <div *ngIf="sup===false">
+				<button (click)="signup()" type="submit" class="button login__submit">
+          Sign up.
+				</button>		
+      </div>
+
+
+    </div>
+
+			<!-- <div class="social-login">
+				<h3>log in via</h3>
+			</div> -->
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>
 </div>
