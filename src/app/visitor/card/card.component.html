@@ -1,12 +1,17 @@
-<button routerLink="/editor">Liste des Formulaires</button>
-<div class="main d-flex justify-content-center" >
+  
+                
+                <!-- <a style="color: black" class="nav-link active" routerLink="/editor"><img style="width: 3em; height: 3em;  "   src="assets/img/checklist.png " alt="">Liste des Formulaires </a> -->
+<div class="body">
+<div class="main d-flex justify-content-center" style="margin-top: 0.5%;">
     <!-- <div [ngClass]="this.form.width"> -->
     <!-- <div [ngClass]="this.form.border"> -->
 
-<div [ngClass]="this.form.style">
+<div [ngClass]="this.form.style" class="margin-right: 20%">
     <!-- <h1 style="text-shadow: 1px 1px black;font-weight: 800;color:orange;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">{{form.title}}</h1> -->
     <!-- <h1 style="text-shadow: 1px 1px black;font-weight: 800;color:orange;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">{{form.category}}</h1> -->
-    <div  style="text-shadow: 1px 1px black;font-weight: 800;color:orange;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" *ngFor="let item of form.items">
+    <div  style=" text-shadow: 1px 1px black;font-weight: 800;color:orangered;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" 
+    class="p-2 " 
+    *ngFor="let item of form.items">
         
         <div class="form-group">
 
@@ -47,6 +52,6 @@
     </div>
     </div>
 <!-- </div> -->
+<!-- </div> -->
+
 </div>
-
-

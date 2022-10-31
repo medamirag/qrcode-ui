@@ -1,7 +1,11 @@
-
+// .aa{
+//   margin-right: 20%;
+//   text-align: left;
+// }
   .title{
+    
     text-align: center;
-    color: hwb(327 8% 11%);
+    color:rgb(201, 19, 125);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
   // background-color: gray;
@@ -10,15 +14,18 @@
   }
 
   .TextInput{
+    font-size: 20px;
     text-align: center;
     color:rgb(54, 35, 231);
     background:transparent;
     border-color:transparent ;
   }
+  
   .PhoneInput{
+    font-size: 20px;
     text-align: center;
     color:rgb(54, 35, 231);
     background:transparent;
     border-color:transparent ;
   }
-
+ 

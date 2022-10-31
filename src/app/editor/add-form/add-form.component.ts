@@ -293,7 +293,7 @@ this.activeUrl=environment.baseUrl+"/visitor/"+this.router.snapshot.params['id']
  
   saveOrUpdate(){
     this.formService.saveOrUpdate(this.form).subscribe(data=>{console.log(data);
-      this.route.navigate(['/editor']);
+      this.route.navigate(['/editor/'+data.id]);
       
     } 
        )

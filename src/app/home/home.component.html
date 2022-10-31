@@ -28,7 +28,7 @@
 <div class="col-sm-3" *ngFor="let form of forms">
   
     <div class="card" style=" width: 18rem;height: 10rem; color: rgb(63, 173, 19);">
-        <div class="card-body " ngClass="{{form.style}}" >
+        <div class="card-body " ngClass="{{form.style}}" style=" width: 18rem;height: 10rem;" >
           <h5 class="card-title">{{form.category}}</h5>
           <p class="card-text">{{form.title}}</p>
           <button [routerLink]="['visitor', form.id]"  class="btn btn Light link" style="background-color: rgba(196, 173, 173, 0.753);">Acceder</button>

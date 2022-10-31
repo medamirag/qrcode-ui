@@ -2,42 +2,55 @@
 
 <nav class="navbar navbar-expand-lg" style="background-color:whitesmoke">
     <div class="container-fluid ">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-        <ul style="font-weight: 700; cursor: pointer; text-align: left; padding:0px 200px;" class="navbar-nav  mb-2 mb-lg-0"   >
-            <li class="nav-item">
-                <a style="color: black" class="nav-link active" routerLink="/editor">Cancel </a>
-            </li>
+            <ul style="font-weight: 700; cursor: pointer; text-align: left; padding:0px 200px;"
+                class="navbar-nav  mb-2 mb-lg-0">
 
-            <li class="nav-item">
-                <a  style="color: black" class="nav-link active buttonStyle"   (click)="saveOrUpdate()"> Save</a>
-            </li>
-        </ul>
-               
-        <ul style="font-weight: 600; cursor: pointer;" class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a style="color: black;" class="nav-link "   (click)="addTemplate('businessCard')">Carte Visite</a>
-          </li>
-          <li class="nav-item">
-            <a style="color: black;" class="nav-link" (click)="addTemplate('AlzheimerPatient')">Patient Alzheimer</a>
-          </li>
-          <li class="nav-item">
-            <a style="color: black;" class="nav-link" (click)="addTemplate('restaurantMenu')">Menu Restaurant</a>
-          </li>
-          <li class="nav-item">
-            <a style="color: black;" class="nav-link" (click)="addTemplate('carte mariage')">carte mariage</a>
-          </li>
-    
-         
-          
-        </ul>
-       
-      </div>
+
+                <a style="color: black" class="nav-link active" routerLink="/editor"><img
+                        style="width: 2em; height: 2em;  " src="assets/img/button.png " alt="">Cancel </a>
+
+
+
+
+                <a style="color: black" class="nav-link active buttonStyle" (click)="saveOrUpdate()"><img
+                        style="width: 2em; height: 2em;  " src="assets/img/diskette.png " alt=""> Save</a>
+
+            </ul>
+
+            <ul style="font-weight: 600; cursor: pointer;" class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                <a style="color: black;" class="nav-link " (click)="addTemplate('businessCard')"> <img
+                        style="width: 2em; height: 2em;  " src="assets/img/business-card.png " alt="">Carte Visite</a>
+
+
+                <a style="color: black;" class="nav-link" (click)="addTemplate('AlzheimerPatient')"><img
+                        style="width: 2em; height: 2em;  " src="assets/img/patient.png " alt="">Patient Alzheimer</a>
+
+
+
+                <a style="color: black;" class="nav-link" (click)="addTemplate('restaurantMenu')"><img
+                        style="width: 2em; height: 2em;  " src="assets/img/bar.png " alt="">Menu Restaurant</a>
+
+
+
+                <a style="color: black;" class="nav-link" (click)="addTemplate('carte mariage')"><img
+                        style="width: 2em; height: 2em;  " src="assets/img/wedding-invitation.png " alt="">carte
+                    mariage</a>
+
+
+
+
+            </ul>
+
+        </div>
     </div>
-  </nav>
+</nav>
 
 
 
@@ -51,78 +64,67 @@
 
 <!-- SideBar -->
 
-<div class="sidenav " >
-    <div class="d-flex justify-content-center">
-       
-        <td></td>
-    
-    </div>
+<div class="sidenav ">
+
     <br>
-    
-    <ul class="">
-       <!-- <li>
-        <button class="btn btn-warning justify-content-sm-center btn-lg" routerLink="/editor">Cancel</button>
-       </li>
-       <li>
-        <button class="btn btn-primary justify-content-sm-center btn-lg" (click)="saveOrUpdate()">SAVE</button>       </li> -->
 
-        <li>
-            <a (click)="add('Divider')">
-                <img style="width:1em; height: 1em; "   src="assets/img/gap.png " alt="">
-                <!-- <i class="fa fa2 fa-solid fa-bars"></i> -->
+    <li>
+        <a (click)="add('Divider')">
+            <img style="width:1em; height: 1em; " src="assets/img/gap.png " alt="">
+            <!-- <i class="fa fa2 fa-solid fa-bars"></i> -->
 
-                <span class="nav-text "  style="font-size: 20px;">
-                    Divider
-                </span>
-            </a>
+            <span class="nav-text " style="font-size: 20px;">
+                Divider
+            </span>
+        </a>
 
-        </li>
-        <li>
-            <a (click)="add('Title')">
-                <img style="width:1em; height: 1em; "   src="assets/img/title.png " alt="">
-                <!-- <i class="fa fa2 fa-solid fa-paragraph"></i> -->
+    </li>
+    <li>
+        <a (click)="add('Title')">
+            <img style="width:1em; height: 1em; " src="assets/img/title.png " alt="">
+            <!-- <i class="fa fa2 fa-solid fa-paragraph"></i> -->
 
-                <span class="nav-text" style="font-size: 20px;">
-                    Title
-                </span>
-            </a>
+            <span class="nav-text" style="font-size: 20px;">
+                Title
+            </span>
+        </a>
 
-        </li>
-        <li>
-            <a (click)="add('TextInput')">
-                <img style="width:1em; height: 1em; "   src="assets/img/modifier-le-fichier.png " alt=""> 
-                <!-- <i class="fa fa2 fa-solid fa-font"></i> -->
+    </li>
+    <li>
+        <a (click)="add('TextInput')">
+            <img style="width:1em; height: 1em; " src="assets/img/modifier-le-fichier.png " alt="">
+            <!-- <i class="fa fa2 fa-solid fa-font"></i> -->
 
-                <span class="nav-text" style="font-size: 20px; ">
-                    Text
-                </span>
-            </a>
+            <span class="nav-text" style="font-size: 20px; ">
+                Text
+            </span>
+        </a>
 
-        </li>
-        <li>
-            <a  (click)="add('EmailInput')">
-        
-             
-                    <img style="width:1em; height: 1em; "   src="assets/img/e-mail.png " alt=""> 
-                    <span class="nav-text " style="font-size: 20px;">
-                       Email
-                    </span>
-            </a>
+    </li>
+    <li>
+        <a (click)="add('EmailInput')">
 
-        </li>
-        <li>
-            <a (click)="add('PhoneInput')">
-                <img style="width:1em; height: 1em; "   src="assets/img/telephoner.png " alt=""> 
-                <!-- <i class="fa fa2 fa-solid fa-phone">
+
+            <img style="width:1em; height: 1em; " src="assets/img/e-mail.png " alt="">
+            <span class="nav-text " style="font-size: 20px;">
+                Email
+            </span>
+        </a>
+
+    </li>
+    <li>
+        <a (click)="add('PhoneInput')">
+            <img style="width:1em; height: 1em; " src="assets/img/telephoner.png " alt="">
+            <!-- <i class="fa fa2 fa-solid fa-phone">
                 </i>  -->
-                <span class="nav-text" style="font-size: 20px;">
-                    Phone
-                </span>
-            </a>
+            <span class="nav-text" style="font-size: 20px;">
+                Phone
+            </span>
+        </a>
 
-        </li>
+    </li>
 
-        <!-- <li >
+    <!-- <li >
             <a  (click)="add('AddressInput')">
 
                 <div [ngClass]="hasMap?'disabled':'activated'">
@@ -135,7 +137,7 @@
         </li> -->
 
 
-    </ul>
+
 
     <!-- <h1 style="color: white;text-align: center;">Size</h1>
     <ul>
@@ -156,125 +158,149 @@
             <br>
         </li>
     </ul> -->
-<br>
-<br>
+    <br>
+    <br>
 
     <h1 style="color: black;text-align: center; font-size: 20px;">
-   <img style="width:1.5em; height: 1.5em; "   src="assets/img/background.png" alt="">
-    Styles</h1>
+        <img style="width:1.5em; height: 1.5em; " src="assets/img/background.png" alt="">
+        Styles
+    </h1>
 
-<ul>
-    <li *ngFor="let style of styles" style="padding: 10px;display:inline-block ">
-        <div (click)="selectClass(style.class)" class="" [ngClass]="style.class"
-            style=" border-style: solid ;width: 2rem;height : 2rem">
-        </div>
-        <br>
-    </li>
-</ul>
+    <ul>
+        <li *ngFor="let style of styles;let j=index" style="padding: 10px;display:inline-block ">
+            <div *ngIf="j===0">
+                carte mariage
+            </div>
+            <div *ngIf="j===6">
+                Menu Restaurant
+            </div>
+            <div *ngIf="j===12">
+                Carte Visite
+            </div>
+            <div (click)="selectClass(style.class)" class="" [ngClass]="style.class"
+                style=" border-style: solid ;width: 2rem;height : 2rem">
+            </div>
+            <br>
+        </li>
+    </ul>
 
 </div>
 
 <!-- Form -->
 
-<div class="main d-flex justify-content-center" >
-<!-- <div [ngClass]="this.form.style,this.form.border,this.form.width"> -->
+<div class="main d-flex justify-content-center">
+    <!-- <div [ngClass]="this.form.style,this.form.border,this.form.width"> -->
     <!-- <div [ngClass]="this.form.width"> -->
     <!-- <div [ngClass]="this.form.border"> -->
 
 
 
-        <div [ngClass]="this.form.style">
-           
-            <div style="font-weight: 500; color: blue; text-align: center">isPrivate?</div> 
+    <div [ngClass]="this.form.style">
 
-                <input [(ngModel)]="form.private" type="checkbox" >
+        <div style="font-weight: 500; color: blue; text-align: center">isPrivate?</div>
 
-             
-    <!-- <div style="font-weight: 500;">Title</div>  -->
-    <input [(ngModel)]="form.title" type="text" class="form-control" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1">
+        <input [(ngModel)]="form.private" type="checkbox">
 
 
-
-    <!-- <div style="font-weight: 500;">Category</div>  -->
-
-    <select [(ngModel)]="form.category" type="text" class="form-control" placeholder="Category" aria-label="Username" aria-describedby="basic-addon1">
-   <option *ngFor="let category of categories" [ngValue]="category" [selected]="category===form.category" >{{category}}</option>
-   <option  [ngValue]="'Personalized'" [selected]="'Personalized'===form.category" >Personalized</option>
-    
-</select>
-  <br>
-    <div    *ngFor="let item of form.items">
-        
-        <div *ngIf="item.type ==='EmailInput' " class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span  class="input-group-text" id="basic-addon1">            <i (click)="remove(item.label,item.identifier)" class="fa fas fa-minus-circle"></i>
-              &nbsp;   {{item.label}}</span>
-            </div>
-            <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-
-      
-           
-
-        <div *ngIf="item.type ==='Divider' " class="input-group mb-3">
-                       <hr class="w-100  Divider bg-dark"> 
-
-                       <span  class="input-group-text" id="basic-addon1">            <i (click)="remove(item.label,item.identifier)" class="fa fas fa-minus-circle"></i>
-                        &nbsp;   </span>
-          </div>
+        <!-- <div style="font-weight: 500;">Title</div>  -->
+        <input [(ngModel)]="form.title" type="text" class="form-control" placeholder="Title" aria-label="Username"
+            aria-describedby="basic-addon1">
 
 
-          <div  *ngIf="item.type ==='Title' " class="input-group mb-3">
-            <span  class="input-group-text" id="basic-addon1">            <i (click)="remove(item.label,item.identifier)" class="fa fas fa-minus-circle"></i>
-               </span>
-            <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-       
-        <div *ngIf="item.type ==='PhoneInput' " class="input-group mb-3">
-            <div class="input-group-prepend">
 
-                <span  class="input-group-text" id="basic-addon1">            <i (click)="remove(item.label,item.identifier)" class="fa fas fa-minus-circle"></i>
-                    &nbsp;   {{item.label}}</span>
-                
+        <!-- <div style="font-weight: 500;">Category</div>  -->
+
+        <select [(ngModel)]="form.category" type="text" class="form-control" placeholder="Category"
+            aria-label="Username" aria-describedby="basic-addon1">
+            <option *ngFor="let category of categories" [ngValue]="category" [selected]="category===form.category">
+                {{category}}</option>
+            <option [ngValue]="'Personalized'" [selected]="'Personalized'===form.category">Personalized</option>
+
+        </select>
+        <br>
+        <div class="aa" *ngFor="let item of form.items">
+
+            <div *ngIf="item.type ==='EmailInput' " class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"> <i (click)="remove(item.label,item.identifier)"
+                            class="fa fas fa-minus-circle"></i>
+                        &nbsp; {{item.label}}</span>
                 </div>
-            <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-       
-          <div *ngIf="item.type ==='AddressInput' " class="input-group mb-3">
-            <span  class="input-group-text" id="basic-addon1">            <i (click)="remove(item.label,item.identifier)" class="fa fas fa-minus-circle"></i>
-                &nbsp;   {{item.label}}</span>
-
-            <div style="  margin: auto;" >
-                <google-map  *ngIf="item.type ==='AddressInput' " height="250px" width="250px" [center]="center"
-                    [zoom]="zoom" (mapClick)="moveMap($event)" (mapMousemove)="move($event)">
-                </google-map>
+                <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}"
+                    aria-label="Username" aria-describedby="basic-addon1">
             </div>
-          </div>
 
-         
+
+
+
+            <div *ngIf="item.type ==='Divider' " class="input-group mb-3">
+                <hr class="w-100  Divider bg-dark">
+
+                <span class="input-group-text" id="basic-addon1"> <i (click)="remove(item.label,item.identifier)"
+                        class="fa fas fa-minus-circle"></i>
+                    &nbsp; </span>
+            </div>
+
+
+            <div *ngIf="item.type ==='Title' " class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"> <i (click)="remove(item.label,item.identifier)"
+                        class="fa fas fa-minus-circle"></i>
+                </span>
+                <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}"
+                    aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <div *ngIf="item.type ==='PhoneInput' " class="input-group mb-3">
+                <div class="input-group-prepend">
+
+                    <span class="input-group-text" id="basic-addon1"> <i (click)="remove(item.label,item.identifier)"
+                            class="fa fas fa-minus-circle"></i>
+                        &nbsp; {{item.label}}</span>
+
+                </div>
+                <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}"
+                    aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <div *ngIf="item.type ==='AddressInput' " class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"> <i (click)="remove(item.label,item.identifier)"
+                        class="fa fas fa-minus-circle"></i>
+                    &nbsp; {{item.label}}</span>
+
+                <div style="  margin: auto;">
+                    <google-map *ngIf="item.type ==='AddressInput' " height="250px" width="250px" [center]="center"
+                        [zoom]="zoom" (mapClick)="moveMap($event)" (mapMousemove)="move($event)">
+                    </google-map>
+                </div>
+            </div>
+
+
 
 
 
             <div *ngIf="item.type ==='TextInput' " class="input-group mb-3">
                 <div class="input-group-prepend">
-  <span  class="input-group-text" id="basic-addon1">            <i (click)="remove(item.label,item.identifier)" class="fa fas fa-minus-circle"></i>
-                        &nbsp;   {{item.label}}</span>                </div>
-                <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-    
+                    <span class="input-group-text" id="basic-addon1"> <i (click)="remove(item.label,item.identifier)"
+                            class="fa fas fa-minus-circle"></i>
+                        &nbsp; {{item.label}}</span>
+                </div>
+                <input [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}"
+                    aria-label="Username" aria-describedby="basic-addon1">
+            </div>
 
-     
+
+
+        </div>
+
+
+
+
+
+
+
     </div>
-
-
-
-
-
-
-
-</div>
-<!-- </div> -->
-<!-- </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
 </div>
 <ng-template #qrCode let-close="close">
     <div class="modal-header">

@@ -168,16 +168,16 @@
 .style1-0 {
   width:600px;
   display:grid;
-  background:rgba(179, 174, 174, 0.2);
+  // background:rgba(179, 174, 174, 0.2);
   overflow: hidden;
-background-image:  url('https://s.cdpn.io/7635/averyson-logo.gif');
+background-image:  url('https://thumbs.dreamstime.com/z/carte-d-invitation-de-mariage-avec-la-robe-et-le-golde-de-jeune-mari%C3%A9e-31291834.jpg');
 }
 
   .style1 {
     width:500px;
     display:grid;
     overflow: hidden;
- background-image: url("https://freedesignfile.com/upload/2014/04/Creative-scroll-paper-background-vector-set-14.jpg");
+ background-image: url("https://previews.123rf.com/images/fortyforks/fortyforks1606/fortyforks160600017/60160705-invitation-de-mariage-ou-le-jour-de-l-arri%C3%A8re-plan-de-la-m%C3%A8re-l-espace-vide-entour%C3%A9-de-fleurs-vue-de.jpg");
   }
   
   .style2 {
@@ -188,18 +188,54 @@ background-image:  url('https://s.cdpn.io/7635/averyson-logo.gif');
     background-image:url('https://media.istockphoto.com/vectors/retro-delicate-wedding-card-with-pink-watercolor-texture-and-flowers-vector-id1294181713?k=20&m=1294181713&s=612x612&w=0&h=DDI5NgivZ3IfStpbiXqiPpkII92KlGnEG8-FSUry3aY=')
     
   }
-  /////// menu restou
-  .style3 {
-    width:280px;
+  .style2-2 {
+    
+    width: 400px;
     display:grid;
     overflow: hidden;
- background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsFmdVdkfB_sCoEVQcAHOdyMn1rrE_AZ1kYQ&usqp=CAU");
+    background-image:url('https://img.freepik.com/photos-gratuite/brindille-fleur-jasminum-auriculatum-carte-mariage-fond-blanc_23-2148187472.jpg?w=2000')
+    
+  }
+  .style2-3 {
+    
+    width: 500px;
+    display:grid;
+    overflow: hidden;
+    background-image:url('https://static3.depositphotos.com/1000789/115/i/950/depositphotos_1150494-stock-photo-wedding-rings-and-roses-as.jpg')
+    
+  }
+  .style2-4 {
+    
+    width: 500px;
+    display:grid;
+    overflow: hidden;
+    background-image:url('https://static4.depositphotos.com/1010671/300/i/600/depositphotos_3003637-stock-photo-elegant-card.jpg')
+    
+  }
+  /////// menu restou
+  .style3 {
+    width:500px;
+    display:grid;
+    overflow: hidden;
+ background-image: url("https://c8.alamy.com/compfr/h6ckat/arriere-plan-du-menu-vintage-set-couverts-sur-fond-de-bois-rustique-avec-de-l-espace-vide-pour-le-texte-h6ckat.jpg");
   }
   .style4 {
     width: 400px;
     display:grid;
     overflow: hidden;
     background-image: url("https://github.com/Afarah92/the-rosa-restuarant/blob/master/the%20rosa%20wesite/img/hero.jpg?raw=true");
+  }
+  .style4-4 {
+    width: 500px;
+    display:grid;
+    overflow: hidden;
+    background-image: url("https://images.unsplash.com/photo-1464411335145-a52ac26409ad?ixlib=rb-0.3.5&s=28ade3497ad2da579fd9940c8f05771a&auto=format&fit=crop&w=1350&q=80")
+  }
+  .style4-5 {
+    width: 500px;
+    display:grid;
+    overflow: hidden;
+    background-image: url('https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500')
   }
   .style5 {
     width: 600px;
@@ -218,36 +254,62 @@ background-image:  url('https://s.cdpn.io/7635/averyson-logo.gif');
   
   ////////Cartevisite
   .style8 {
-    width:800px;
-    height:450px;
+    width:600px;
+    height:480px;
     display:grid;
+    background:rgba(179, 174, 174, 0.2);
     // grid-template-columns: 1fr 1fr 1fr;
     // grid-template-rows: 1fr 1fr 1fr;
     // border:5px solid black;
     border-radius:5%;
-    background-image:url(https://www.finnlog-blockhaus.de/wp-content/uploads/2019/04/Moderne-Holzvillen-Draco-Blockhaus-mit-Terrasse-und-Garten-1.jpg);;
+    background-image:url(https://img.freepik.com/vecteurs-libre/courbe-arriere-plan-rouge_2065-107.jpg);;
   };
   .style9 {
-    width:800px;
-    height:450px;
+    width:700px;
+    height:480px;
     display:grid;
+    background:rgba(179, 174, 174, 0.2);
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: 1fr 1fr 1fr;
+    // border:5px solid black;
+    border-radius:5%;
+    background-image:url("https://thumbs.dreamstime.com/b/fond-lumineux-abstrait-avec-les-lignes-dynamiques-rouges-et-noires-pour-le-papier-peint-la-carte-de-visite-professionnelle-ou-151249691.jpg");;
+  };
+  .style9-1 {
+    width:700px;
+    height:480px;
+    display:grid;
+    background:rgba(179, 174, 174, 0.2);
     // grid-template-columns: 1fr 1fr 1fr;
     // grid-template-rows: 1fr 1fr 1fr;
     // border:5px solid black;
     border-radius:5%;
     background-image:url(https://etic-informatique.fr/wp-content/uploads/etic-informatique-reparation40.jpg);;
   };
+  .style9-2 {
+    width:700px;
+    height:480px;
+    display:grid;
+    background:rgba(179, 174, 174, 0.2);
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: 1fr 1fr 1fr;
+    // border:5px solid black;
+    border-radius:5%;
+    background-image:url("https://miro.medium.com/max/1200/1*4BIGTY604aR0LT0h1DcQEw.png");
+  };
+  
 
   .style10 {
-    width:800px;
-    height :450px;
+    width:700px;
+    height :480px;
     display:grid;
+    background:rgba(179, 174, 174, 0.2);
     // grid-template-columns: 1fr 1fr 1fr;
     // grid-template-rows: 1fr 1fr 1fr;
     // border:5px solid blanchedalmond;
     border-radius:5%;
-    background-image:url(https://miro.medium.com/max/1200/1*4BIGTY604aR0LT0h1DcQEw.png);
-    
+    background-image:url(https://u7.uidownload.com/vector/78/842/vector-red-and-white-abstract-curve-background-eps-ai.jpg);
+  
   
   };
 

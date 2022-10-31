@@ -5,6 +5,7 @@ import { FormListComponent } from './form-list/form-list.component';
 
 const routes: Routes = [
   {path:"",component:FormListComponent},
+  {path:":id",component:FormListComponent},
   {path:"forms/:id",component:AddFormComponent}
 ];
 

@@ -23,6 +23,8 @@ baseUrl = environment.baseUrl
 
   ngOnInit(): void {
     this.formService.getAllFormsByUser().subscribe(data=>this.forms=data)
+    if(Number(this.router.snapshot.params['id'])>0)
+    this.getQrCode(this.router.snapshot.params['id'])
   }
   deleteByFormID(id:string){
     this.formService.deleteByFormID(id).subscribe(data=>{console.log(data);

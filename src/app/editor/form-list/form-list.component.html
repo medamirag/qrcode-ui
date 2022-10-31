@@ -10,9 +10,10 @@
         
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
          
-          <li class="nav-item">
+     
+            <img style="width: 2em; height: 2em;  "   src="assets/img/add-file.png " alt="">
             <a routerLink="/editor/forms/0" class="nav-link "  style="font-weight: 600;color: black">Add New Form</a>
-          </li>
+         
           
         </ul>
         
@@ -53,7 +54,7 @@
        
         <td> <i  (click)="getQrCode(form.id)" class="fa fa2 fa-solid fa-qrcode fa-3x d-flex justify-content-center"></i> </td>
        
-        <td> <i  routerLink="/visitor/{{form.id}}" class="fa fa2 fa-solid fa-qrcode fa-3x d-flex justify-content-center"></i> </td>
+        <td> <i  routerLink="/visitor/{{form.id}}" class=" d-flex justify-content-center"><img style="width: 4em; height: 3em;  "   src="assets/img/visitor.png " alt=""> </i> </td>
       
         <td>     
              
@@ -75,14 +76,12 @@
 </div>
 </div>
   </div>
-  <ng-template #qrCode let-close="close">
+  <ng-template #qrCode let-close="close"  >
     <!-- <div class="modal-header">
         {{activeUrl}}
     </div> -->
-    <div class="modal-body">
+    <div  class="modal-body d-flex justify-content-center">
         <qrcode (qrCodeURL)="loadQrCode($event)"  [qrdata]="activeUrl" [width]="400" [errorCorrectionLevel]="'M'"></qrcode>
     </div>
-    <div class="modal-footer">
-
-    </div>
+  
 </ng-template>
